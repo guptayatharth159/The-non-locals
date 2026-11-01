@@ -5,7 +5,6 @@ node_modules/
 **/node_modules/
 functions/lib/
 backend/functions/lib/
-**/lib/
 /.pnp
 .pnp.*
 .yarn/*
