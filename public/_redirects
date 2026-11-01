@@ -1,0 +1,7 @@
+/dashboard /adventures 302
+/profile /adventures 302
+/auth /admin/login 302
+/bookings/* /adventures 302
+/destinations /adventures 302
+/explore /adventures 302
+/admin/trips/:id/edit /admin/trips/edit?id=:id 302

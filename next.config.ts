@@ -1,45 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/dashboard",
-        destination: "/adventures",
-        permanent: false,
-      },
-      {
-        source: "/profile",
-        destination: "/adventures",
-        permanent: false,
-      },
-      {
-        source: "/auth",
-        destination: "/admin/login",
-        permanent: false,
-      },
-      {
-        source: "/bookings/:path*",
-        destination: "/adventures",
-        permanent: false,
-      },
-      {
-        source: "/destinations",
-        destination: "/adventures",
-        permanent: false,
-      },
-      {
-        source: "/explore",
-        destination: "/adventures",
-        permanent: false,
-      },
-      {
-        source: "/admin/trips/:id/edit",
-        destination: "/admin/trips/edit?id=:id",
-        permanent: false,
-      },
-    ];
-  },
+  output: "export",
   images: {
     unoptimized: true,
     remotePatterns: [
