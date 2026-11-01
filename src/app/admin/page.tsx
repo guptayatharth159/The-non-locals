@@ -343,7 +343,7 @@ export default function AdminDashboardPage() {
                           <ExternalLink className="w-3.5 h-3.5" />
                         </Link>
                         <Link
-                          href={`/admin/trips/${trip.id}/edit`}
+                          href={`/admin/trips/edit?id=${trip.id}`}
                           className="inline-flex items-center px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-white font-mono text-[11px]"
                         >
                           Edit

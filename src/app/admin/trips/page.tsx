@@ -275,7 +275,7 @@ export default function AdminTripsPage() {
                         </Link>
 
                         <Link
-                          href={`/admin/trips/${trip.id}/edit`}
+                          href={`/admin/trips/edit?id=${trip.id}`}
                           className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-white font-mono text-[11px] transition-colors"
                         >
                           <Edit className="w-3 h-3" />

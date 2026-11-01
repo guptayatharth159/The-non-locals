@@ -1,23 +1,26 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import React, { Suspense, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import TripForm from "@/components/admin/TripForm";
 import { Trip, SAMPLE_TRIPS } from "@/data/trips";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase/client";
 import { Compass } from "lucide-react";
 
-export default function EditTripClient() {
-  const params = useParams();
-  const tripId = params?.id as string;
+function EditTripContent() {
+  const searchParams = useSearchParams();
+  const tripId = searchParams.get("id") || "";
 
   const [trip, setTrip] = useState<Trip | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchTrip() {
-      if (!tripId) return;
+      if (!tripId) {
+        setLoading(false);
+        return;
+      }
       setLoading(true);
 
       try {
@@ -30,7 +33,7 @@ export default function EditTripClient() {
           return;
         }
       } catch (e) {
-        console.warn("[EditTripClient] Firestore fetch note:", e);
+        console.warn("[EditTrip] Firestore fetch note:", e);
       }
 
       // Check sample trips fallback
@@ -66,3 +69,17 @@ export default function EditTripClient() {
   return <TripForm initialTrip={trip} isNew={false} />;
 }
 
+export default function EditTripPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="py-24 text-center space-y-4 font-mono text-xs text-white/50">
+          <Compass className="w-8 h-8 text-[#D4F938] mx-auto animate-spin" />
+          <p>Loading expedition editor...</p>
+        </div>
+      }
+    >
+      <EditTripContent />
+    </Suspense>
+  );
+}
