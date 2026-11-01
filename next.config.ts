@@ -23,6 +23,16 @@ const nextConfig: NextConfig = {
         destination: "/adventures",
         permanent: false,
       },
+      {
+        source: "/destinations",
+        destination: "/adventures",
+        permanent: false,
+      },
+      {
+        source: "/explore",
+        destination: "/adventures",
+        permanent: false,
+      },
     ];
   },
   images: {
