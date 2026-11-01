@@ -1,7 +1,6 @@
 import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase/client";
 import { BRAND } from "@/lib/constants";
-import type { FirestorePublicSettings } from "@/types/firebase";
 
 export interface PublicWebsiteSettings {
   whatsappNumber: string;

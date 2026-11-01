@@ -2,7 +2,6 @@ import {
   collection,
   doc,
   getDocs,
-  getDoc,
   query,
   where,
   setDoc,
@@ -12,7 +11,6 @@ import {
 } from "firebase/firestore";
 import { db } from "@/lib/firebase/client";
 import { Trip, DepartureSlot, SAMPLE_TRIPS } from "@/data/trips";
-import type { FirestoreTrip, FirestoreTripSlot } from "@/types/firebase";
 
 /**
  * Transforms a Firestore trip document to the frontend Trip interface.
