@@ -143,14 +143,13 @@ runTest("storage.rules allows admin-only writes to /trips and /settings", () => 
 // ── TEST SUITE 4: OBSOLETE ROUTE CLEANUP & REDIRECTS ─────────────────────────
 console.log("\n--- 4. OBSOLETE ROUTE HANDLING ---");
 
-runTest("Customer routes redirect safely without exposing dead interfaces", () => {
-  const authPage = fs.readFileSync(path.resolve("src/app/auth/page.tsx"), "utf-8");
-  const dashboardPage = fs.readFileSync(path.resolve("src/app/dashboard/page.tsx"), "utf-8");
-  const profilePage = fs.readFileSync(path.resolve("src/app/profile/page.tsx"), "utf-8");
+runTest("Customer routes redirect safely in next.config.ts without dead code", () => {
+  const nextConfig = fs.readFileSync(path.resolve("next.config.ts"), "utf-8");
 
-  assert.ok(authPage.includes('redirect("/admin/login")'), "/auth must redirect to /admin/login");
-  assert.ok(dashboardPage.includes('redirect("/adventures")'), "/dashboard must redirect to /adventures");
-  assert.ok(profilePage.includes('redirect("/adventures")'), "/profile must redirect to /adventures");
+  assert.ok(nextConfig.includes('source: "/auth"'), "/auth must be redirected");
+  assert.ok(nextConfig.includes('source: "/dashboard"'), "/dashboard must be redirected");
+  assert.ok(nextConfig.includes('source: "/profile"'), "/profile must be redirected");
+  assert.ok(nextConfig.includes('source: "/bookings/:path*"'), "/bookings must be redirected");
 });
 
 console.log("\n=================================================================");

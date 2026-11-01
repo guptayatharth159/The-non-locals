@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, DM_Sans, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/animation/SmoothScroll";
-import { AuthProvider } from "@/lib/auth/AuthContext";
 import { BRAND } from "@/lib/constants";
 
 const spaceGrotesk = Space_Grotesk({
@@ -85,9 +84,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className="min-h-screen bg-[#0b0e0c] text-[#F8F7F2] font-body selection:bg-[#D4F938] selection:text-[#0b0e0c]"
       >
-        <AuthProvider>
-          <SmoothScroll>{children}</SmoothScroll>
-        </AuthProvider>
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );
