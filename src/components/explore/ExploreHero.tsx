@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, Compass, GraduationCap, Shield } from "lucide-react";
+import { ChevronRight, Compass, Users, Shield } from "lucide-react";
 
 export default function ExploreHero() {
   return (
@@ -36,8 +36,8 @@ export default function ExploreHero() {
         {/* Hero Title & Description */}
         <div className="max-w-3xl space-y-4 sm:space-y-5">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#D4F938] font-mono text-xs tracking-wider uppercase">
-            <GraduationCap className="w-3.5 h-3.5" />
-            BENNETT UNIVERSITY EXCLUSIVE TRAVEL COMMUNITY
+            <Users className="w-3.5 h-3.5" />
+            CURATED HIMALAYAN EXPEDITIONS // OPEN COHORT TRAVEL
           </div>
 
           <h1 className="font-heading font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight leading-[0.98]">
@@ -48,7 +48,7 @@ export default function ExploreHero() {
           </h1>
 
           <p className="font-body text-base sm:text-lg md:text-xl text-white/85 font-normal leading-relaxed max-w-2xl">
-            Affordable group adventures and curated travel experiences for Bennett University students. Join solo or with friends — experience the Himalayas beyond the usual college routine.
+            Curated group expeditions and offbeat Himalayan journeys. Join solo or with friends — experience the mountains beyond the ordinary.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2 text-xs font-mono text-white/80">
@@ -57,7 +57,7 @@ export default function ExploreHero() {
               Indicative Budget: ₹7,000 – ₹8,000
             </span>
             <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">
-              Solo Students Welcome
+              Solo Explorers Welcome
             </span>
             <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 flex items-center gap-1">
               <Shield className="w-3 h-3 text-[#D4F938]" />

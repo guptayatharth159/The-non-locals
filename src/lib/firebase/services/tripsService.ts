@@ -27,7 +27,7 @@ function mapDocToTrip(id: string, data: DocumentData): Trip {
     durationDays: data.durationDays || 3,
     departureDate: data.departureDate || "Schedule TBA",
     departureMonth: data.departureMonth || "Fall 2026",
-    departureLocation: data.departureLocation || "Bennett University Campus",
+    departureLocation: data.departureLocation || "Delhi NCR Pickup Hub",
     maxGroupSize: data.maxGroupSize || 18,
     minAge: data.minAge || 18,
     price: data.price || 7499,
@@ -49,9 +49,9 @@ function mapDocToTrip(id: string, data: DocumentData): Trip {
     experienceHighlights: Array.isArray(data.experienceHighlights) ? data.experienceHighlights : [],
     itinerary: Array.isArray(data.itinerary) ? data.itinerary : [],
     accommodation: data.accommodation || {
-      type: "Student Homestay / Campsite",
+      type: "Mountain Homestay / Campsite",
       roomSharing: "Triple / Quad Sharing",
-      description: "Comfortable verified student stays with hot water and power backup.",
+      description: "Comfortable verified stays with hot water and power backup.",
       amenities: ["Hot Water", "Power Backup", "Wi-Fi (subject to network)"],
     },
     inclusions: Array.isArray(data.inclusions) ? data.inclusions : [],
@@ -74,10 +74,20 @@ export async function getPublishedTripsFromFirestore(): Promise<Trip[]> {
     const snapshot = await getDocs(q);
 
     if (snapshot.empty) {
+      // Check if trips exist without the explicit boolean published field
+      const allQ = query(tripsRef);
+      const allSnapshot = await getDocs(allQ);
+      if (!allSnapshot.empty) {
+        return allSnapshot.docs
+          .map((docSnap) => mapDocToTrip(docSnap.id, docSnap.data()))
+          .filter((t) => t.published !== false);
+      }
       return [];
     }
 
-    return snapshot.docs.map((docSnap) => mapDocToTrip(docSnap.id, docSnap.data()));
+    return snapshot.docs
+      .map((docSnap) => mapDocToTrip(docSnap.id, docSnap.data()))
+      .filter((t) => t.published !== false);
   } catch (error) {
     console.warn("[tripsService] Firestore getPublishedTrips error:", error);
     throw error;
@@ -156,8 +166,9 @@ export async function fetchTripsWithFallback(): Promise<{ trips: Trip[]; isLiveF
     console.warn("[tripsService] Firestore unavailable, using static trip data fallback:", err);
   }
 
-  // Graceful fallback to approved static trips
-  return { trips: SAMPLE_TRIPS, isLiveFirestore: false };
+  // Graceful fallback to approved static trips (published only)
+  const publishedSampleTrips = SAMPLE_TRIPS.filter((t) => t.published !== false);
+  return { trips: publishedSampleTrips, isLiveFirestore: false };
 }
 
 /**

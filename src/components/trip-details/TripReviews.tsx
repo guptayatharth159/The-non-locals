@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { GraduationCap, MessageSquareQuote } from "lucide-react";
+import { Compass, MessageSquareQuote } from "lucide-react";
 import { motion } from "framer-motion";
 import { TripReview } from "@/data/trips";
 
@@ -18,14 +18,14 @@ export default function TripReviews({ reviews = [] }: TripReviewsProps) {
         <div className="p-6 rounded-3xl bg-black/40 border border-white/10 backdrop-blur-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D4F938]">
-              <GraduationCap className="w-5 h-5" />
+              <Compass className="w-5 h-5" />
             </div>
             <div>
               <h4 className="font-heading font-bold text-base text-white">
-                Bennett Cohort Traveler Dispatches
+                Expedition Community Dispatches
               </h4>
               <p className="font-body text-xs text-white/60">
-                Verified reviews and traveler stories will be shared directly by Bennett University students following departure batches.
+                Verified reviews and traveller stories will be shared directly by cohort explorers following departure batches.
               </p>
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function TripReviews({ reviews = [] }: TripReviewsProps) {
         <span className="w-5 h-[2px] bg-[#D4F938]" />
         <span className="font-mono text-xs tracking-[0.2em] uppercase text-[#D4F938] font-semibold flex items-center gap-1.5">
           <MessageSquareQuote className="w-3.5 h-3.5" />
-          STUDENT COHORT DISPATCHES
+          COMMUNITY COHORT DISPATCHES
         </span>
       </div>
 
@@ -61,7 +61,7 @@ export default function TripReviews({ reviews = [] }: TripReviewsProps) {
             </p>
             <div className="flex items-center justify-between text-xs font-mono text-white/50 pt-2 border-t border-white/10">
               <span className="text-white font-bold">{rev.author}</span>
-              <span>{rev.college || "Bennett University"}</span>
+              <span>{rev.college || "Explorer Community"}</span>
             </div>
           </motion.div>
         ))}

@@ -4,10 +4,9 @@ export const BRAND = {
   name: "THE NON LOCALS",
   tagline: "NOT HERE TO FIT IN. HERE TO EXPLORE.",
   secondaryTagline: "MORE THAN A TRIP, IT'S AN EXPERIENCE.",
-  targetUniversity: "Bennett University",
   shortDescription:
-    "An exclusive travel community for Bennett University students who want to explore new places, meet amazing people and experience something beyond the usual college routine.",
-  budgetNote: "Indicative Student Budget: ₹7,000 – ₹8,000",
+    "A curated travel community for spirited explorers, road-trippers, and weekend wanderers who want to discover new places, meet amazing people, and experience something truly beyond the ordinary.",
+  budgetNote: "Indicative Budget: ₹7,000 – ₹8,000",
   establishedYear: "2024",
   baseCampCoordinates: "32.2396° N, 77.1887° E",
   baseCampLocation: "Western Himalayas, India",
@@ -83,8 +82,8 @@ export const CONFIRMED_DESTINATIONS = [
 // Client Messaging: Why Travel With Us
 export const WHY_TRAVEL_WITH_US = [
   {
-    title: "Affordable Student Trips",
-    description: "Carefully designed for Bennett University students with realistic, accessible student budgets.",
+    title: "Affordable Group Adventures",
+    description: "Carefully designed for spirited explorers with realistic, accessible group travel budgets.",
     icon: "BadgePercent",
   },
   {
@@ -109,7 +108,7 @@ export const WHY_TRAVEL_WITH_US = [
   },
   {
     title: "Safety-Conscious Planning",
-    description: "Every route, stay, and transit option is vetted with thoughtful planning and student safety as priority.",
+    description: "Every route, stay, and transit option is vetted with thoughtful planning and traveller safety as priority.",
     icon: "HeartHandshake",
   },
 ];
@@ -158,7 +157,7 @@ export const OUR_NON_NEGOTIABLES = [
   },
   {
     title: "Reliable Service",
-    description: "Transparent communication before, during, and after every trip with dedicated student point-of-contacts.",
+    description: "Transparent communication before, during, and after every trip with dedicated trip leads and cohort coordinators.",
     iconName: "Sparkles",
   },
   {
@@ -177,29 +176,29 @@ export const OUR_NON_NEGOTIABLES = [
 export const WHAT_WE_DO = [
   {
     title: "Experiential Group Trips",
-    tagline: "Cohort-based weekend & semester break getaways",
-    description: "Curated small group departures where Bennett students explore together and bond over shared mountain adventures.",
+    tagline: "Cohort-based weekend & seasonal getaways",
+    description: "Curated small group departures where explorers travel together and bond over shared mountain adventures.",
     status: "active",
     badge: "CORE OFFERING",
   },
   {
     title: "Customised Holidays",
     tagline: "Tailored private getaways for your friend circle",
-    description: "Got a specific group or semester break in mind? We customize itineraries, stays, and transit to your preferences.",
+    description: "Got a specific group or travel window in mind? We customize itineraries, stays, and transit to your preferences.",
     status: "active",
     badge: "AVAILABLE ON REQUEST",
   },
   {
     title: "Creator Hosted Trips",
     tagline: "Themed journeys with storytellers & photographers",
-    description: "Special edition student journeys led by visual creators, outdoor enthusiasts, and mountain storytellers.",
+    description: "Special edition journeys led by visual creators, outdoor enthusiasts, and mountain storytellers.",
     status: "active",
     badge: "LIMITED EDITIONS",
   },
   {
-    title: "Corporate & Campus Trips",
-    tagline: "Departmental & leadership retreats",
-    description: "Structured mountain retreats designed for campus clubs, student bodies, and partner organizations.",
+    title: "Corporate & Community Retreats",
+    tagline: "Team, community & leadership retreats",
+    description: "Structured mountain retreats designed for creator teams, startups, and community groups.",
     status: "in-planning",
     badge: "IN PLANNING",
   },
@@ -226,10 +225,10 @@ export const FEATURED_EXPEDITIONS: Expedition[] = [
       "/images/emerald-lake.jpg",
     ],
     coordinates: "31.6367° N, 77.3468° E",
-    highlightTag: "STUDENT FAVORITE",
+    highlightTag: "COMMUNITY FAVORITE",
     description:
       "A peaceful getaway into the heart of Himachal with cozy riverside wooden cottages, trout streams, and serene alpine walks.",
-    departureDates: ["*Sample Schedule — Batch announcements via Bennett cohort group"],
+    departureDates: ["*Sample Schedule — Batch announcements via WhatsApp Community"],
   },
   {
     id: "dharamshala-mcleodganj-retreat",
@@ -253,7 +252,7 @@ export const FEATURED_EXPEDITIONS: Expedition[] = [
     highlightTag: "CULTURE & VIEWS",
     description:
       "Experience serene monastery chanting, bustling mountain cafes, high pine trails, and the majestic Dhauladhar snowline backdrop.",
-    departureDates: ["*Sample Schedule — Batch announcements via Bennett cohort group"],
+    departureDates: ["*Sample Schedule — Batch announcements via WhatsApp Community"],
   },
   {
     id: "manali-kullu-adventure",
@@ -277,7 +276,7 @@ export const FEATURED_EXPEDITIONS: Expedition[] = [
     highlightTag: "POPULAR COHORT",
     description:
       "The classic Himalayan mountain journey: chill cafe culture, Jogini waterfall hike, and crisp alpine air surrounded by soaring peaks.",
-    departureDates: ["*Sample Schedule — Batch announcements via Bennett cohort group"],
+    departureDates: ["*Sample Schedule — Batch announcements via WhatsApp Community"],
   },
   {
     id: "shimla-kufri-getaway",
@@ -300,7 +299,7 @@ export const FEATURED_EXPEDITIONS: Expedition[] = [
     coordinates: "31.1048° N, 77.1734° E",
     highlightTag: "WEEKEND SPECIAL",
     description:
-      "Escape campus for a quick recharge amidst historic mountain architecture, deodar cedar canopies, and sweeping Himalayan panoramas.",
-    departureDates: ["*Sample Schedule — Batch announcements via Bennett cohort group"],
+      "Escape the city rush for a quick recharge amidst historic mountain architecture, deodar cedar canopies, and sweeping Himalayan panoramas.",
+    departureDates: ["*Sample Schedule — Batch announcements via WhatsApp Community"],
   },
 ];

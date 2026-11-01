@@ -46,7 +46,7 @@ export default function TripOverview({ trip }: TripOverviewProps) {
       icon: UserCheck,
       label: "ELIGIBILITY AGE",
       value: `${trip.minAge}+ Years`,
-      subtext: "College Students & Youth Only",
+      subtext: "Open to All Adult Explorers",
     },
     {
       icon: CalendarCheck,

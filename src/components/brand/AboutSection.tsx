@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Compass, Sparkles, MapPin, Landmark, Footprints, GraduationCap } from "lucide-react";
+import { Compass, Sparkles, MapPin, Landmark, Footprints, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { WHAT_TO_EXPECT } from "@/lib/constants";
 
@@ -21,8 +21,8 @@ export default function AboutSection() {
           {/* Left Text */}
           <div className="lg:col-span-7 space-y-5">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/15 text-[#D4F938] font-mono text-xs tracking-wider uppercase">
-              <GraduationCap className="w-4 h-4" />
-              BENNETT UNIVERSITY EXCLUSIVE TRAVEL COMMUNITY
+              <Users className="w-4 h-4" />
+              CURATED HIMALAYAN TRAVEL COMMUNITY
             </div>
 
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase text-white tracking-tight leading-[1.05]">
@@ -33,11 +33,11 @@ export default function AboutSection() {
             </h2>
 
             <p className="font-body text-base sm:text-lg text-white/85 leading-relaxed">
-              We are a student-focused community dedicated to university students who love to travel. We create opportunities to explore new places and experience them in a whole new way.
+              We are an experiential travel community dedicated to curious souls, road-trippers, and explorers who love raw landscapes and authentic journeys. We create opportunities to explore new horizons and experience them in a whole new way.
             </p>
 
             <p className="font-body text-sm sm:text-base text-white/70 leading-relaxed">
-              College shouldn&apos;t just be about moving between classes and dorm rooms. THE NON LOCALS is built exclusively for Bennett University students who want to step outside, meet like-minded peers, and discover mountain trails, hidden waterfalls, and quiet Himalayan roads with people who share their curiosity.
+              Travel shouldn&apos;t just be about commercial sightseeing and hurried bus rides. THE NON LOCALS is built for spirited travellers who want to step outside the noise, meet like-minded peers, and discover mountain trails, hidden waterfalls, and quiet Himalayan valleys with people who share their curiosity.
             </p>
 
             {/* Core Values Badges */}
@@ -48,7 +48,7 @@ export default function AboutSection() {
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-2xl bg-white/5 border border-white/10">
                 <span className="w-2 h-2 rounded-full bg-[#D4F938]" />
-                <span>Affordable student-first budgets (₹7K - ₹8K)</span>
+                <span>Accessible, transparent pricing (₹7K - ₹8K)</span>
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function AboutSection() {
           <div className="lg:col-span-5 relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-square rounded-3xl overflow-hidden border border-white/20 bg-black/50 shadow-2xl">
             <Image
               src="/images/hero-camp.jpg"
-              alt="Bennett Students Himalayan Expedition"
+              alt="Himalayan Expedition and Campsite"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover object-center filter contrast-[1.08] brightness-[0.88]"

@@ -109,7 +109,7 @@ export default function ExpeditionCard({
         <div className="flex items-center justify-between pt-1">
           <div>
             <span className="block font-mono text-[10px] text-[#EDE5D5]/50 uppercase tracking-wider">
-              ALL-INCLUSIVE STUDENT FARE
+              ALL-INCLUSIVE GROUP FARE
             </span>
             <div className="flex items-baseline gap-1">
               <span className="font-display text-2xl sm:text-3xl text-[#F8F7F2]">

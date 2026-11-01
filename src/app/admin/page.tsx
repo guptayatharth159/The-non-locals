@@ -236,7 +236,7 @@ export default function AdminDashboardPage() {
             <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[#D4F938] group-hover:translate-x-1 transition-all" />
           </div>
           <p className="font-body text-xs text-white/50">
-            Update the official WhatsApp number powering student enquiries.
+            Update the official WhatsApp number powering booking enquiries.
           </p>
         </Link>
       </div>
@@ -249,7 +249,7 @@ export default function AdminDashboardPage() {
               Expedition Catalog Overview
             </h2>
             <p className="font-mono text-xs text-white/50">
-              Live trips visible to students vs. unpublished drafts.
+              Live trips visible on website vs. unpublished drafts.
             </p>
           </div>
           <Link

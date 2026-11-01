@@ -10,7 +10,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   "Experiential Group Trips": <Users className="w-6 h-6 text-[#D4F938]" strokeWidth={2} />,
   "Customised Holidays": <Sliders className="w-6 h-6 text-[#D4F938]" strokeWidth={2} />,
   "Creator Hosted Trips": <Camera className="w-6 h-6 text-[#D4F938]" strokeWidth={2} />,
-  "Corporate & Campus Trips": <Building2 className="w-6 h-6 text-white/50" strokeWidth={2} />,
+  "Corporate & Community Retreats": <Building2 className="w-6 h-6 text-white/50" strokeWidth={2} />,
 };
 
 export default function WhatWeDo() {
@@ -26,7 +26,7 @@ export default function WhatWeDo() {
             <div className="flex items-center gap-2">
               <span className="w-6 h-[2px] bg-[#D4F938]" />
               <span className="font-mono text-xs tracking-[0.25em] uppercase text-[#D4F938] font-semibold">
-                CAMPUS & MOUNTAIN TRAVEL FORMATS
+                CURATED EXPEDITION FORMATS
               </span>
             </div>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase text-white tracking-tight leading-none">
@@ -34,7 +34,7 @@ export default function WhatWeDo() {
             </h2>
           </div>
           <p className="font-body text-sm sm:text-base text-white/70 max-w-md sm:text-right">
-            Curated formats designed specifically around student cohorts, semester breaks, and personalized group journeys.
+            Curated formats designed specifically around small cohorts, weekend escapes, and personalized group journeys.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export default function WhatWeDo() {
                 </div>
 
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/60">
-                  <span>BENNETT EXCLUSIVE</span>
+                  <span>SMALL BATCH COHORT</span>
                   <Link
                     href="/adventures"
                     className="flex items-center gap-1 text-[#D4F938] hover:underline"

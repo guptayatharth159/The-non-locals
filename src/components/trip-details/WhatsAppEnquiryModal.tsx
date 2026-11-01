@@ -15,7 +15,6 @@ import {
   AlertCircle,
   CheckCircle2,
   ExternalLink,
-  GraduationCap,
   Sparkles,
 } from "lucide-react";
 import { Trip, DepartureSlot } from "@/data/trips";
@@ -55,8 +54,8 @@ export default function WhatsAppEnquiryModal({
   const [notes, setNotes] = useState("");
 
   // ── UI States ──────────────────────────────────────────────────────────────
-  const [whatsappNumber, setWhatsappNumber] = useState<string>("");
-  const [isLoadingSettings, setIsLoadingSettings] = useState(true);
+  const [whatsappNumber, setWhatsappNumber] = useState<string>("919876543210");
+  const [isLoadingSettings, setIsLoadingSettings] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isSuccessSent, setIsSuccessSent] = useState(false);
   const [lastGeneratedUrl, setLastGeneratedUrl] = useState<string>("");
@@ -90,8 +89,8 @@ export default function WhatsAppEnquiryModal({
       setIsLoadingSettings(true);
       try {
         const settings = await getPublicSettings();
-        if (isMounted) {
-          setWhatsappNumber(settings.whatsappNumber || "");
+        if (isMounted && settings.whatsappNumber) {
+          setWhatsappNumber(settings.whatsappNumber);
         }
       } catch (e) {
         console.warn("[WhatsAppEnquiryModal] Error loading settings:", e);
@@ -538,13 +537,13 @@ export default function WhatsAppEnquiryModal({
                 {/* 4. Special Requests */}
                 <div className="space-y-1.5 pt-1">
                   <label className="block font-mono text-[10px] text-white/50 uppercase">
-                    Special Requests or College Cohort Notes (Optional)
+                    Special Requests or Room Preferences (Optional)
                   </label>
                   <textarea
                     rows={2}
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    placeholder="e.g. Quad sharing cottage preference, dietary requests, Bennett cohort room allocation..."
+                    placeholder="e.g. Quad sharing cottage preference, dietary requests, room allocation..."
                     className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white font-mono text-xs focus:border-[#D4F938] focus:outline-none transition-colors resize-none"
                   />
                 </div>
@@ -577,8 +576,8 @@ export default function WhatsAppEnquiryModal({
                     </span>
                   </div>
                   <div className="flex items-center gap-2 text-white/40">
-                    <GraduationCap className="w-3.5 h-3.5 text-[#D4F938] shrink-0" />
-                    <span>Bennett University Exclusive Cohort • Female Safety Priority</span>
+                    <Compass className="w-3.5 h-3.5 text-[#D4F938] shrink-0" />
+                    <span>Curated Cohort Travel • Female Safety Priority</span>
                   </div>
                 </div>
               </div>

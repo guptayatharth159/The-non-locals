@@ -155,7 +155,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               </span>
               <span className="flex items-center gap-1.5">
                 <Shield className="w-3.5 h-3.5 text-[#A3A879]" />
-                ESTD. {BRAND.establishedYear} // COLLEGE EXPEDITIONS
+                ESTD. {BRAND.establishedYear} // HIMALAYAN EXPEDITIONS
               </span>
             </div>
           </div>

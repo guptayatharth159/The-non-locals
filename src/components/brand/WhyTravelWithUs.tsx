@@ -34,7 +34,7 @@ export default function WhyTravelWithUs() {
             <div className="flex items-center gap-2">
               <span className="w-6 h-[2px] bg-[#D4F938]" />
               <span className="font-mono text-xs tracking-[0.25em] uppercase text-[#D4F938] font-semibold">
-                CURATED FOR BENNETT STUDENTS
+                CURATED FOR CURIOUS EXPLORERS
               </span>
             </div>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase text-white tracking-tight leading-none">
@@ -42,7 +42,7 @@ export default function WhyTravelWithUs() {
             </h2>
           </div>
           <p className="font-body text-sm sm:text-base text-white/70 max-w-md sm:text-right">
-            We build experiences tailored for university students — keeping trips affordable, authentic, safe, and deeply memorable.
+            We build experiences tailored for spirited explorers — keeping trips affordable, authentic, safe, and deeply memorable.
           </p>
         </div>
 
@@ -92,7 +92,7 @@ export default function WhyTravelWithUs() {
                 Traveling Solo? You Are Always Welcome.
               </h4>
               <p className="font-body text-xs sm:text-sm text-white/80 max-w-2xl leading-relaxed">
-                You do not need a pre-existing group of friends to travel with us. Most students sign up individually, meet peers from Bennett University on day one, and form lasting friendships across campus.
+                You do not need a pre-existing group of friends to travel with us. Most travellers sign up solo, connect with friendly fellow explorers on day one, and form lasting friendships over shared mountain trails.
               </p>
             </div>
           </div>

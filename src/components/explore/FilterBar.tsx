@@ -32,7 +32,7 @@ const CATEGORIES: { label: string; value: string }[] = [
 
 const BUDGET_RANGES = [
   { label: "All Budgets", value: "All" },
-  { label: "₹7,000 – ₹8,000 (Student Range)", value: "7000-8000" },
+  { label: "₹7,000 – ₹8,000 (Indicative Range)", value: "7000-8000" },
   { label: "Under ₹7,500", value: "under-7500" },
   { label: "₹7,500+", value: "above-7500" },
 ];
@@ -270,7 +270,7 @@ export default function FilterBar({
             )}
           </div>
           <span className="hidden sm:inline text-white/40">
-            ALL EXPEDITIONS INCLUDE STUDENT SAFETY & GUIDES
+            ALL EXPEDITIONS INCLUDE SAFETY PROTOCOLS & LOCAL GUIDES
           </span>
         </div>
       </div>

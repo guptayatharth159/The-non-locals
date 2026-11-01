@@ -90,7 +90,7 @@ export default function TripDetailsView({ trip }: TripDetailsViewProps) {
               onSelectSlot={handleSelectSlot}
             />
 
-            {/* 9. Demonstration Student Reviews */}
+            {/* 9. Community Reviews */}
             <TripReviews
               reviews={trip.reviews}
               rating={trip.rating}

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Plus, Minus, ShieldCheck, ArrowRight, Users, GraduationCap } from "lucide-react";
+import { Plus, Minus, ShieldCheck, ArrowRight, Users, Compass } from "lucide-react";
 import { motion } from "framer-motion";
 import { Trip, DepartureSlot } from "@/data/trips";
 
@@ -52,7 +52,7 @@ export default function TripBookingCard({
           <div className="flex items-start justify-between gap-4 pb-4 border-b border-white/10">
             <div>
               <span className="block font-mono text-[10px] text-[#D4F938] uppercase tracking-widest font-semibold">
-                INDICATIVE STUDENT FARE
+                INDICATIVE PACKAGE FARE
               </span>
               <div className="flex items-baseline gap-1.5 mt-1">
                 <span className="font-heading font-black text-3xl xl:text-4xl text-white">
@@ -66,18 +66,18 @@ export default function TripBookingCard({
             </div>
 
             <span className="px-3 py-1 rounded-full bg-[#183D32] border border-[#D4F938]/40 text-[#D4F938] font-mono font-semibold text-[10px] uppercase">
-              SAMPLE DATA
+              CONFIRMED TRIP
             </span>
           </div>
 
           {/* Destination Details Tag */}
           <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/10 space-y-1 font-mono text-xs">
             <div className="flex items-center gap-1.5 text-white/90 font-semibold">
-              <GraduationCap className="w-4 h-4 text-[#D4F938]" />
-              <span>BENNETT UNIVERSITY EXCLUSIVE</span>
+              <Compass className="w-4 h-4 text-[#D4F938]" />
+              <span>CURATED GROUP EXPEDITION</span>
             </div>
             <p className="text-[11px] text-white/60 font-body">
-              Join solo or register with your friends from campus.
+              Join solo or register with your friend circle.
             </p>
           </div>
 
@@ -103,7 +103,7 @@ export default function TripBookingCard({
               </button>
 
               <span className="font-heading font-bold text-xl text-white">
-                {travellers} {travellers === 1 ? "Student" : "Students"}
+                {travellers} {travellers === 1 ? "Explorer" : "Explorers"}
               </span>
 
               <button
@@ -157,8 +157,8 @@ export default function TripBookingCard({
               <span>Female Safety First • Handpicked Stays</span>
             </div>
             <div className="flex items-center gap-2">
-              <GraduationCap className="w-3.5 h-3.5 text-[#D4F938]" />
-              <span>Bennett University Student Cohort</span>
+              <Compass className="w-3.5 h-3.5 text-[#D4F938]" />
+              <span>Small Cohorts (14–18 Explorers)</span>
             </div>
           </div>
         </motion.div>
@@ -171,7 +171,7 @@ export default function TripBookingCard({
         <div className="max-w-md mx-auto flex items-center justify-between gap-4">
           <div>
             <span className="block font-mono text-[10px] text-white/50 uppercase">
-              INDICATIVE FOR {travellers} {travellers === 1 ? "STUDENT" : "STUDENTS"}
+              INDICATIVE FOR {travellers} {travellers === 1 ? "EXPLORER" : "EXPLORERS"}
             </span>
             <div className="flex items-baseline gap-1.5">
               <span className="font-heading font-black text-2xl text-[#D4F938]">

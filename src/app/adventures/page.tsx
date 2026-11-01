@@ -18,9 +18,9 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function AdventuresPage() {
   const tripsSectionRef = useRef<HTMLDivElement>(null);
 
-  // Firestore Trips State
-  const [trips, setTrips] = useState<Trip[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Firestore Trips State - initialized with confirmed published expeditions so there is never a flash of 0
+  const [trips, setTrips] = useState<Trip[]>(() => SAMPLE_TRIPS.filter((t) => t.published !== false));
+  const [loading, setLoading] = useState(false);
   const [isLiveFromFirestore, setIsLiveFromFirestore] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
 
@@ -28,12 +28,14 @@ export default function AdventuresPage() {
     let isMounted = true;
 
     async function loadTrips() {
-      setLoading(true);
       setLoadError(null);
       try {
         const result = await fetchTripsWithFallback();
         if (isMounted) {
-          setTrips(result.trips);
+          const published = result.trips.filter((t) => t.published !== false);
+          if (published.length > 0) {
+            setTrips(published);
+          }
           setIsLiveFromFirestore(result.isLiveFirestore);
         }
 
@@ -43,8 +45,11 @@ export default function AdventuresPage() {
             if (seeded && isMounted) {
               fetchTripsWithFallback().then((res) => {
                 if (isMounted && res.isLiveFirestore) {
-                  setTrips(res.trips);
-                  setIsLiveFromFirestore(true);
+                  const seededPublished = res.trips.filter((t) => t.published !== false);
+                  if (seededPublished.length > 0) {
+                    setTrips(seededPublished);
+                    setIsLiveFromFirestore(true);
+                  }
                 }
               });
             }
@@ -53,7 +58,7 @@ export default function AdventuresPage() {
       } catch (err: any) {
         if (isMounted) {
           console.warn("[AdventuresPage] Using sample trips fallback:", err);
-          setTrips(SAMPLE_TRIPS);
+          setTrips(SAMPLE_TRIPS.filter((t) => t.published !== false));
           setLoadError("Connecting to live departures database...");
         }
       } finally {
@@ -173,7 +178,7 @@ export default function AdventuresPage() {
                 <span className="w-5 h-[2px] bg-[#D4F938]" />
                 <span className="font-mono text-xs tracking-[0.22em] uppercase text-[#D4F938] font-semibold flex items-center gap-1.5">
                   <Compass className="w-3.5 h-3.5" />
-                  UPCOMING STUDENT COHORTS & EXPEDITIONS
+                  UPCOMING CURATED COHORTS & EXPEDITIONS
                 </span>
                 {isLiveFromFirestore && (
                   <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#183D32] border border-[#D4F938]/40 text-[#D4F938] font-mono text-[9px] uppercase tracking-wider">
@@ -188,7 +193,7 @@ export default function AdventuresPage() {
             </div>
 
             <span className="font-mono text-xs text-white/60">
-              BENNETT UNIVERSITY EXCLUSIVE // 14-18 EXPLORER CAP PER BATCH
+              SMALL BATCH EXPEDITIONS // 14–18 EXPLORER CAP PER COHORT
             </span>
           </div>
 
@@ -197,7 +202,7 @@ export default function AdventuresPage() {
             filters={filters}
             onFilterChange={handleFilterChange}
             onClearFilters={handleClearFilters}
-            totalResults={loading ? 0 : filteredTrips.length}
+            totalResults={filteredTrips.length}
           />
 
           {/* Loading Skeletons, Trips Grid or Empty State */}
@@ -258,7 +263,7 @@ export default function AdventuresPage() {
                   No Published Expeditions Yet
                 </h3>
                 <p className="font-body text-sm text-white/70 leading-relaxed">
-                  Upcoming student departures are currently being finalized by the field team. Check back shortly for confirmed schedules.
+                  Upcoming cohort departures are currently being finalized by the field team. Check back shortly for confirmed schedules.
                 </p>
               </motion.div>
             ) : (

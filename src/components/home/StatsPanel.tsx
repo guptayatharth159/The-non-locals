@@ -1,16 +1,16 @@
 "use client";
 
 import React from "react";
-import { GraduationCap, Users, Compass } from "lucide-react";
+import { Sparkles, Users, Compass } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function StatsPanel() {
   const pillars = [
     {
-      icon: <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4F938]" strokeWidth={2.2} />,
-      value: "Bennett Exclusive",
-      label: "Exclusively for Bennett students",
-      mobileLabel: "Bennett Only",
+      icon: <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4F938]" strokeWidth={2.2} />,
+      value: "Curated Cohorts",
+      label: "14–18 explorers per batch",
+      mobileLabel: "14–18 Batch",
     },
     {
       icon: <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4F938]" strokeWidth={2.2} />,
@@ -21,7 +21,7 @@ export default function StatsPanel() {
     {
       icon: <Compass className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4F938]" strokeWidth={2.2} />,
       value: "₹7K – ₹8K",
-      label: "Indicative student budget",
+      label: "Indicative adventure budget",
       mobileLabel: "₹7K–₹8K",
     },
   ];

@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin, Calendar, Users, Clock, CheckCircle2, Flame, GraduationCap } from "lucide-react";
+import { ArrowRight, MapPin, Calendar, Users, Clock, CheckCircle2, Flame, Compass } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { FEATURED_TRIP } from "@/data/trips";
 
@@ -18,7 +18,7 @@ export default function FeaturedTrip() {
           <span className="w-6 h-[2px] bg-[#D4F938]" />
           <span className="font-mono text-xs tracking-[0.25em] uppercase text-[#D4F938] font-semibold flex items-center gap-1.5">
             <Flame className="w-3.5 h-3.5" />
-            FEATURED STUDENT EXPEDITION
+            FEATURED EXPEDITION
           </span>
         </div>
 
@@ -63,10 +63,10 @@ export default function FeaturedTrip() {
             {/* Bottom Photo Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/20 pointer-events-none" />
 
-            {/* University Tag */}
+            {/* Cohort Tag */}
             <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-[#D4F938] font-mono text-xs">
-              <GraduationCap className="w-3.5 h-3.5" />
-              <span>BENNETT UNIVERSITY EXCLUSIVE COHORT</span>
+              <Compass className="w-3.5 h-3.5" />
+              <span>SMALL BATCH CURATED COHORT</span>
             </div>
           </div>
 
@@ -112,7 +112,7 @@ export default function FeaturedTrip() {
               </div>
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-[#D4F938]" />
-                <span className="text-[#D4F938] font-bold">14–18 STUDENT COHORT</span>
+                <span className="text-[#D4F938] font-bold">14–18 EXPLORER COHORT</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#D4F938]" />
@@ -124,7 +124,7 @@ export default function FeaturedTrip() {
             <div className="flex flex-wrap items-end justify-between gap-4 pt-1">
               <div>
                 <span className="block font-mono text-[10px] text-[#D4F938] uppercase tracking-widest font-semibold">
-                  INDICATIVE STUDENT BUDGET
+                  INDICATIVE PACKAGE FARE
                 </span>
                 <div className="flex items-baseline gap-2">
                   <span className="font-heading font-extrabold text-3xl sm:text-4xl text-white">
@@ -133,7 +133,7 @@ export default function FeaturedTrip() {
                   <span className="font-mono text-xs text-white/70">/ PERSON</span>
                 </div>
                 <span className="block font-mono text-[10px] text-white/50 pt-0.5">
-                  *Sample schedule & pricing. Final details announced on cohort channels.
+                  *Indicative package fare. Batch departures coordinated via WhatsApp.
                 </span>
               </div>
 

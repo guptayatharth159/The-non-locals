@@ -1,69 +1,51 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Compass, Shield, Mountain, Mail, CheckCircle2, GraduationCap } from "lucide-react";
+import { ArrowUpRight, Compass, Shield, Mountain, Mail, MessageCircle } from "lucide-react";
 import { BRAND, NAV_ITEMS, CONFIRMED_DESTINATIONS } from "@/lib/constants";
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setSubscribed(true);
-    setEmail("");
-  };
-
   return (
     <footer className="relative bg-[#0b0e0c] text-[#EDE5D5] border-t border-white/15 pt-16 sm:pt-20 pb-12 overflow-hidden select-none">
       <div className="relative max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-12">
-        {/* Top Newsletter & Cohort Updates */}
+        {/* Top Community Broadcast & Batch Updates */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 sm:pb-16 border-b border-white/10">
           <div className="lg:col-span-7 space-y-3">
             <span className="font-mono text-xs text-[#D4F938] tracking-[0.25em] uppercase font-semibold flex items-center gap-2">
               <span className="w-4 h-[2px] bg-[#D4F938]" />
-              BENNETT UNIVERSITY COHORT UPDATES
+              UPCOMING EXPEDITIONS & BATCH DROPS
             </span>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-[#F8F7F2] uppercase tracking-tight leading-tight">
               NOT HERE TO FIT IN. <br />
               <span className="text-[#D4F938]">HERE TO EXPLORE.</span>
             </h2>
             <p className="font-body text-[#EDE5D5]/80 text-sm sm:text-base max-w-xl">
-              Get notified when upcoming semester break cohorts, weekend trips, and confirmed seat schedules are announced for Bennett students.
+              Get notified when upcoming seasonal departures, weekend getaways, and limited-seat cohort batches are announced. Connect directly with our expedition team.
             </p>
           </div>
 
           <div className="lg:col-span-5 flex flex-col justify-end">
-            {subscribed ? (
-              <div className="flex items-center gap-3 p-4 bg-[#183D32] border border-[#D4F938]/40 text-[#EDE5D5] rounded-2xl">
-                <CheckCircle2 className="w-5 h-5 text-[#D4F938]" />
-                <span className="font-mono text-xs tracking-wider uppercase text-white">
-                  EMAIL REGISTERED. YOU WILL RECEIVE BATCH DROP ALERTS.
-                </span>
-              </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="ENTER YOUR BENNETT / PERSONAL EMAIL"
-                  required
-                  className="bg-black/60 border border-white/20 rounded-full px-5 py-3 text-sm font-mono text-white placeholder-white/40 focus:outline-none focus:border-[#D4F938] flex-1"
-                />
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#D4F938] hover:bg-[#C5EC2E] text-black font-heading font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:shadow-[0_0_20px_rgba(212,249,56,0.5)] cursor-pointer"
-                >
-                  <span>JOIN LIST</span>
-                </button>
-              </form>
-            )}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20get%20updates%20on%20upcoming%20trips%20from%20The%20Non%20Locals"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full bg-[#D4F938] hover:bg-[#C5EC2E] text-black font-heading font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 hover:shadow-[0_0_25px_rgba(212,249,56,0.5)] cursor-pointer"
+              >
+                <MessageCircle className="w-4 h-4 text-black" />
+                <span>CONNECT ON WHATSAPP</span>
+              </a>
+              <Link
+                href="/adventures"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 cursor-pointer"
+              >
+                <span>VIEW EXPEDITIONS</span>
+              </Link>
+            </div>
             <span className="font-mono text-[11px] text-white/50 mt-2">
-              EXCLUSIVELY FOR BENNETT UNIVERSITY STUDENTS. ZERO SPAM.
+              CURATED SMALL GROUP EXPEDITIONS // DIRECT COMMUNITY DISPATCHES
             </span>
           </div>
         </div>
@@ -87,7 +69,7 @@ export default function Footer() {
               </h3>
             </div>
             <p className="font-body text-xs sm:text-sm text-white/75 leading-relaxed">
-              An exclusive travel community for Bennett University students who want to explore new places, meet amazing people, and experience something beyond the usual college routine.
+              A curated travel community for spirited explorers, road-trippers, and curious minds who want to explore new horizons and experience something beyond the ordinary.
             </p>
             <div className="space-y-1.5 font-mono text-xs text-white/70">
               <div className="flex items-center gap-2">
@@ -163,11 +145,11 @@ export default function Footer() {
                 <span className="font-bold">FEMALE SAFETY FIRST</span>
               </div>
               <p className="font-body text-xs text-white/70 leading-relaxed">
-                Thoughtful planning, verified stays, comfortable transportation, and reliable student support on every journey.
+                Thoughtful planning, verified stays, comfortable transportation, and reliable guide support on every journey.
               </p>
             </div>
             <div className="font-mono text-[11px] text-white/40">
-              *All itineraries, dates, and prices shown are sample data until final cohort schedules are published.
+              *All itineraries, dates, and prices shown are indicative guides until batch schedules are confirmed.
             </div>
           </div>
         </div>
@@ -182,7 +164,7 @@ export default function Footer() {
         {/* Bottom Legal / Copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10 text-xs font-mono text-white/50">
           <span>
-            © {new Date().getFullYear()} {BRAND.name}. FOR BENNETT UNIVERSITY STUDENTS.
+            © {new Date().getFullYear()} {BRAND.name}. ALL RIGHTS RESERVED.
           </span>
           <div className="flex items-center gap-6">
             <Link href="/adventures" className="hover:text-[#D4F938] transition-colors">

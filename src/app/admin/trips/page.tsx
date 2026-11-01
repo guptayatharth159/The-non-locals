@@ -96,7 +96,7 @@ export default function AdminTripsPage() {
             TRIP MANAGEMENT
           </h1>
           <p className="font-body text-xs sm:text-sm text-white/60">
-            Create, edit, publish, and manage all student expeditions and content.
+            Create, edit, publish, and manage all expeditions and content.
           </p>
         </div>
 

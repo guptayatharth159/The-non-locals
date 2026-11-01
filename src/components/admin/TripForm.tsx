@@ -47,7 +47,7 @@ export default function TripForm({ initialTrip, isNew = false }: TripFormProps) 
   const [price, setPrice] = useState(initialTrip?.price || 7499);
   const [originalPrice, setOriginalPrice] = useState(initialTrip?.originalPrice || 8999);
   const [departureLocation, setDepartureLocation] = useState(
-    initialTrip?.departureLocation || "Bennett University Campus"
+    initialTrip?.departureLocation || "Delhi NCR Pickup Hub"
   );
   const [category, setCategory] = useState<any>(initialTrip?.category || "Backpacking");
   const [difficulty, setDifficulty] = useState<any>(initialTrip?.difficulty || "Easy-Moderate");
@@ -84,14 +84,14 @@ export default function TripForm({ initialTrip, isNew = false }: TripFormProps) 
 
   // Accommodation
   const [stayType, setStayType] = useState(
-    initialTrip?.accommodation?.type || "Student Homestay / Campsite"
+    initialTrip?.accommodation?.type || "Mountain Homestay / Campsite"
   );
   const [roomSharing, setRoomSharing] = useState(
     initialTrip?.accommodation?.roomSharing || "Triple / Quad Sharing"
   );
   const [stayDescription, setStayDescription] = useState(
     initialTrip?.accommodation?.description ||
-      "Comfortable verified student stays with hot water and power backup."
+      "Comfortable verified stays with hot water and power backup."
   );
   const [stayAmenitiesInput, setStayAmenitiesInput] = useState(
     initialTrip?.accommodation?.amenities?.join(", ") || "Hot Water, Power Backup, Wi-Fi"
@@ -105,7 +105,7 @@ export default function TripForm({ initialTrip, isNew = false }: TripFormProps) 
           {
             day: 1,
             title: "Departure & Basecamp Arrival",
-            description: "Depart from university campus and arrive at scenic basecamp.",
+            description: "Depart from central pickup hub and arrive at scenic basecamp.",
             activities: ["Scenic drive", "Campfire orientation", "Team briefing"],
             stayType: "Homestay / Camp",
           },
@@ -119,7 +119,7 @@ export default function TripForm({ initialTrip, isNew = false }: TripFormProps) 
       : [
           {
             question: "Who is eligible to join this trip?",
-            answer: "Open to college students and travelers looking for adventurous cohort journeys.",
+            answer: "Open to spirited explorers and travellers looking for adventurous cohort journeys.",
           },
         ]
   );
@@ -507,7 +507,7 @@ export default function TripForm({ initialTrip, isNew = false }: TripFormProps) 
               type="text"
               value={departureLocation}
               onChange={(e) => setDepartureLocation(e.target.value)}
-              placeholder="e.g. Bennett University Campus Main Gate"
+              placeholder="e.g. Delhi NCR / Central Departure Point"
               className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white font-mono text-xs focus:border-[#D4F938] focus:outline-none"
             />
           </div>
@@ -531,7 +531,7 @@ export default function TripForm({ initialTrip, isNew = false }: TripFormProps) 
               rows={4}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="Comprehensive summary of the adventure, student vibe, and terrain..."
+              placeholder="Comprehensive summary of the adventure, group vibe, and terrain..."
               className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white font-mono text-xs focus:border-[#D4F938] focus:outline-none resize-none"
             />
           </div>
@@ -757,7 +757,7 @@ export default function TripForm({ initialTrip, isNew = false }: TripFormProps) 
               rows={5}
               value={inclusionsInput}
               onChange={(e) => setInclusionsInput(e.target.value)}
-              placeholder="Transport from campus&#10;All meals during trek&#10;Experienced mountain guides&#10;Entry permits"
+              placeholder="Transport from pickup hub&#10;All meals during trek&#10;Experienced mountain guides&#10;Entry permits"
               className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white font-mono text-xs focus:border-[#D4F938] focus:outline-none resize-none"
             />
           </div>

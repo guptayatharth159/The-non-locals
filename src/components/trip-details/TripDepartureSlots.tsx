@@ -114,7 +114,7 @@ export default function TripDepartureSlots({
       <div className="mt-4 flex items-center gap-2 text-xs font-mono text-white/50">
         <Sparkles className="w-3.5 h-3.5 text-[#D4F938]" />
         <span>
-          Batches operate with a strict student-to-guide ratio. Early reservations are recommended.
+          Batches operate with a strict traveller-to-guide ratio. Early reservations are recommended.
         </span>
       </div>
     </section>

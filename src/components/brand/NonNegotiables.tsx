@@ -39,7 +39,7 @@ export default function NonNegotiables() {
             </h2>
           </div>
           <p className="font-body text-sm sm:text-base text-white/70 max-w-md sm:text-right">
-            Every trip is planned around core principles that ensure quality, comfort, and peace of mind for every student traveler.
+            Every trip is planned around core principles that ensure quality, comfort, and peace of mind for every traveller.
           </p>
         </div>
 

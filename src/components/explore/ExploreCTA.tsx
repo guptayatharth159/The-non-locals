@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowRight, GraduationCap } from "lucide-react";
+import { ArrowRight, Compass } from "lucide-react";
 
 interface ExploreCTAProps {
   onExploreClick?: () => void;
@@ -27,8 +27,8 @@ export default function ExploreCTA({ onExploreClick }: ExploreCTAProps) {
 
       <div className="relative z-10 max-w-4xl mx-auto py-16 sm:py-24 px-6 sm:px-10 text-center space-y-6">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#D4F938] font-mono text-xs tracking-widest uppercase">
-          <GraduationCap className="w-3.5 h-3.5" />
-          BENNETT UNIVERSITY EXCLUSIVE TRAVEL COMMUNITY
+          <Compass className="w-3.5 h-3.5" />
+          CURATED HIMALAYAN EXPEDITIONS // OPEN COHORT TRAVEL
         </div>
 
         <h2 className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase text-white tracking-tight leading-[0.96]">
@@ -39,7 +39,7 @@ export default function ExploreCTA({ onExploreClick }: ExploreCTAProps) {
         </h2>
 
         <p className="font-body text-base sm:text-lg md:text-xl text-white/85 max-w-xl mx-auto leading-relaxed">
-          MORE THAN A TRIP, IT&apos;S AN EXPERIENCE. Step outside the routine, meet amazing people, and discover the high mountains with your campus peers.
+          MORE THAN A TRIP, IT&apos;S AN EXPERIENCE. Step outside the ordinary, meet incredible people, and discover the high mountains with fellow explorers.
         </p>
 
         <div className="pt-4 flex justify-center">

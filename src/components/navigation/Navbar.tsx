@@ -43,7 +43,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-5">
             <span className="text-[#EDE5D5]/70">
-              COLLEGE STUDENT BATCHES: <strong className="text-[#EDE5D5]">NOW BOOKING FALL 2026</strong>
+              CURATED GROUP EXPEDITIONS: <strong className="text-[#EDE5D5]">NOW OPEN FOR 2026-2027</strong>
             </span>
             <span className="text-[#FF7135] flex items-center gap-1">
               CAMPFIRE VERIFIED <Compass className="w-3.5 h-3.5" />

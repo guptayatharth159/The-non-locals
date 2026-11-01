@@ -61,7 +61,7 @@ export default function TripHero({ trip }: TripHeroProps) {
           </span>
         </motion.nav>
 
-        {/* Category & Student Badges */}
+        {/* Category & Cohort Badges */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export default function TripHero({ trip }: TripHeroProps) {
           </span>
 
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/60 border border-white/15 text-[#D4F938] font-mono text-xs backdrop-blur-md">
-            <span>BENNETT EXCLUSIVE COHORT</span>
+            <span>CURATED SMALL GROUP COHORT</span>
           </span>
 
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-white/90 font-mono text-xs backdrop-blur-md">

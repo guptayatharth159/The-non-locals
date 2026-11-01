@@ -26,18 +26,18 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://thenonlocals.com"),
-  title: `${BRAND.name} | Bennett University Student Travel Community`,
+  metadataBase: new URL("https://the-non-locals.pages.dev"),
+  title: `${BRAND.name} | Curated Group Adventures & Expeditions`,
   description: `${BRAND.tagline} - ${BRAND.shortDescription}`,
   keywords: [
-    "Bennett University travel community",
     "The Non Locals",
-    "Bennett student adventures",
-    "Jibhi Tirthan Valley student trip",
-    "Dharamshala McLeodganj student trip",
-    "Manali Kullu student trip",
-    "Shimla Kufri student trip",
-    "Solo student travel",
+    "Curated Himalayan adventures",
+    "Jibhi Tirthan Valley group trip",
+    "Dharamshala McLeodganj retreat",
+    "Manali Kullu road trip",
+    "Shimla Kufri weekend getaway",
+    "Solo travel community India",
+    "Offbeat Himachal expeditions",
   ],
   authors: [{ name: BRAND.name }],
   icons: {

@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, GraduationCap } from "lucide-react";
+import { ArrowRight, Compass } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import HomeNavbar from "@/components/home/HomeNavbar";
 import FloatingLabel from "@/components/home/FloatingLabel";
@@ -177,11 +177,11 @@ export default function Home() {
               animate="visible"
               className="max-w-2xl space-y-4 sm:space-y-5 lg:space-y-6"
             >
-              {/* Eyebrow badge: Exclusive to Bennett */}
+              {/* Eyebrow badge: Curated Cohorts */}
               <motion.div variants={itemFadeUp} className="flex items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[10px] sm:text-xs font-mono font-semibold tracking-[0.2em] uppercase text-[#D4F938]">
-                  <GraduationCap className="w-3.5 h-3.5" />
-                  BENNETT UNIVERSITY EXCLUSIVE TRAVEL COMMUNITY
+                  <Compass className="w-3.5 h-3.5" />
+                  CURATED GROUP EXPEDITIONS // OPEN COHORT TRAVEL
                 </span>
               </motion.div>
 
@@ -202,7 +202,7 @@ export default function Home() {
                   MORE THAN A TRIP, IT&apos;S AN EXPERIENCE.
                 </p>
                 <p className="text-sm sm:text-base lg:text-lg text-white/85 max-w-xl font-normal leading-relaxed">
-                  An exclusive community for Bennett University students who want to explore new places, meet amazing people, and experience something beyond the usual college routine. Join solo or with your friends.
+                  A curated travel community for spirited explorers, road-trippers, and weekend wanderers who want to explore new places, meet amazing people, and experience something beyond the ordinary. Join solo or with friends.
                 </p>
               </motion.div>
 

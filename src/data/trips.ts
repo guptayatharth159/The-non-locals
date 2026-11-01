@@ -107,7 +107,7 @@ export const CATEGORIES_DATA: CategoryInfo[] = [
     name: "Backpacking",
     count: 4,
     image: "/images/hero-misty-lake-canoe.jpg",
-    tagline: "Student cohorts, mountain cafes & local homestays",
+    tagline: "Curated cohorts, mountain cafes & local homestays",
   },
   {
     name: "Mountain Trekking",
@@ -144,9 +144,9 @@ export const FEATURED_TRIP: Trip = {
   state: "Himachal Pradesh",
   duration: "4 Days / 3 Nights",
   durationDays: 4,
-  departureDate: "Sample Itinerary (Schedule TBA)",
+  departureDate: "Upcoming Cohort (Schedule TBA)",
   departureMonth: "Fall 2026",
-  departureLocation: "Bennett University Campus (Direct Group Pickup)",
+  departureLocation: "Delhi NCR Pickup Hub (Central Departure Point)",
   maxGroupSize: 18,
   minAge: 18,
   price: 7499,
@@ -155,7 +155,7 @@ export const FEATURED_TRIP: Trip = {
   totalSeats: 18,
   category: "Backpacking",
   difficulty: "Easy-Moderate",
-  isSampleData: true,
+  isSampleData: false,
   image: "/images/hero-misty-lake-canoe.jpg",
   galleryImages: [
     "/images/hero-misty-lake-canoe.jpg",
@@ -165,14 +165,14 @@ export const FEATURED_TRIP: Trip = {
   ],
   tagline: "Hidden waterfalls, pine trails & authentic wooden homestays in Tirthan.",
   description:
-    "An exclusive getaway for Bennett University students into the untouched valleys of Jibhi and Tirthan. Wind through pine-canopied trails, explore secret mountain waterfalls, visit ancient towers of Chehni Kothi, and unwind by fresh trout streams with your campus peers.",
+    "A curated escape into the untouched valleys of Jibhi and Tirthan. Wind through pine-canopied trails, explore secret mountain waterfalls, visit ancient towers of Chehni Kothi, and unwind by fresh trout streams with fellow spirited explorers.",
   highlights: [
-    "Exclusive to Bennett University students (Solo & Group friendly)",
-    "Indicative Student Budget: ₹7,000 – ₹8,000",
+    "Small curated cohort of 14–18 explorers (Solo & Group friendly)",
+    "Indicative Package Budget: ₹7,000 – ₹8,000",
     "Hidden waterfalls & pine forest nature trails",
     "Traditional Chehni Kothi fortified wooden tower walk",
-    "Riverside bonfire & acoustic student evenings",
-    "Safety-conscious planning & dedicated student cohort coordinator",
+    "Riverside bonfire & acoustic evening sessions",
+    "Safety-conscious planning & dedicated cohort coordinator",
   ],
   experienceHighlights: [
     {
@@ -192,18 +192,18 @@ export const FEATURED_TRIP: Trip = {
     },
     {
       title: "Solo Traveler Welcoming",
-      description: "No group of friends needed — join solo and get grouped with friendly fellow Bennett peers.",
+      description: "No group of friends needed — join solo and get grouped with friendly fellow travellers.",
       iconName: "Users",
     },
   ],
   itinerary: [
     {
       day: 1,
-      title: "Campus Departure & Scenic Drive into Tirthan",
+      title: "Delhi NCR Assembly & Scenic Drive into Tirthan",
       description:
-        "Depart from Bennett University campus in a comfortable, verified mountain bus. Overnight drive through the scenic Shivalik foothills into Himachal.",
+        "Depart from Delhi NCR pickup points in a comfortable, verified mountain coach. Overnight drive through the scenic Shivalik foothills into Himachal.",
       activities: [
-        "Pick-up directly from Bennett University campus",
+        "Pick-up from designated Delhi NCR hubs",
         "Ice-breaking and trip briefing with cohort coordinators",
         "Scenic highway drive with comfortable food stops",
       ],
@@ -240,29 +240,29 @@ export const FEATURED_TRIP: Trip = {
       day: 4,
       title: "Chehni Kothi Heritage Trail & Return Journey",
       description:
-        "Explore the historic architectural gem of Chehni Kothi. Enjoy a farewell lunch and begin the scenic return drive to Bennett University.",
+        "Explore the historic architectural gem of Chehni Kothi. Enjoy a farewell lunch and begin the scenic return drive to Delhi NCR.",
       activities: [
         "Short hike to Chehni Kothi ancient tower",
         "Souvenir & local honey shopping in Jibhi market",
-        "Overnight journey back to campus",
+        "Overnight return journey back to Delhi NCR",
       ],
       stayType: "Return Transit",
     },
   ],
   accommodation: {
     type: "Handpicked Mountain Homestay / Boutique Cottages",
-    roomSharing: "Triple / Quad student sharing (Twin available on request)",
+    roomSharing: "Triple / Quad sharing (Twin available on request)",
     description:
       "Vetted, clean wooden stays with 24/7 hot water, warm duvets, safe surroundings, and dedicated female safety priorities.",
     amenities: ["Hot Water", "Clean Linens", "Campfire Area", "Home Meals", "Wi-Fi in Common Areas"],
-    notes: "All accommodations are personally checked for student safety and hygiene.",
+    notes: "All accommodations are personally checked for traveller safety, cleanliness, and hygiene.",
   },
   inclusions: [
-    "Comfortable round-trip transportation from Bennett University",
+    "Comfortable round-trip transportation from Delhi NCR",
     "3 Nights stay in verified, hygienic homestays / cottages",
     "Breakfast & dinner as specified in package",
     "Guided visits to Jibhi Waterfall, Jalori Pass & Serolsar Lake",
-    "Dedicated student cohort coordinator & local guide support",
+    "Dedicated cohort coordinator & local guide support",
     "All permits, tolls, and parking taxes",
   ],
   exclusions: [
@@ -273,8 +273,8 @@ export const FEATURED_TRIP: Trip = {
   departureSlots: [
     {
       id: "slot-sample-1",
-      date: "Sample Date 1",
-      endDate: "Sample End 1",
+      date: "Upcoming Batch",
+      endDate: "4 Days Later",
       month: "Fall 2026",
       price: 7499,
       availableSeats: 18,
@@ -287,22 +287,22 @@ export const FEATURED_TRIP: Trip = {
     {
       question: "Can I join if I don't have a group of friends?",
       answer:
-        "Absolutely! THE NON LOCALS is built specifically for university students to connect. A significant portion of our travelers join solo and leave with a close-knit group of friends from Bennett.",
+        "Absolutely! THE NON LOCALS is built specifically for curious travellers to connect. A significant portion of our explorers join solo and leave with a close-knit group of lifelong friends.",
     },
     {
-      question: "Is this trip exclusively for Bennett University students?",
+      question: "Who can join this expedition?",
       answer:
-        "Yes, all our cohorts are exclusively organized for Bennett University students to ensure a safe, comfortable, and relatable student community.",
+        "Our expeditions are open to curious explorers, young professionals, and spirited travellers looking for genuine community travel in small, curated cohorts (14–18 explorers).",
     },
     {
       question: "Are these prices and dates finalized?",
       answer:
-        "This is sample data reflecting our client-communicated indicative budget range of ₹7,000–₹8,000. Final departure schedules and confirmed slots will be announced on official Bennett cohort channels.",
+        "This is indicative data reflecting our communicated budget range of ₹7,000–₹8,000. Confirmed departure schedules and slot reservations are coordinated directly via WhatsApp.",
     },
     {
-      question: "What safety protocols are maintained for female students?",
+      question: "What safety protocols are maintained for female travellers?",
       answer:
-        "Female safety is our foremost non-negotiable. We select thoroughly vetted stays, safe transit partners, and maintain respectful cohort conduct on every journey.",
+        "Female safety is our foremost non-negotiable. We select thoroughly vetted stays, verified drivers, and maintain respectful cohort conduct on every journey.",
     },
   ],
   featured: true,
@@ -317,9 +317,9 @@ export const DHARAMSHALA_TRIP: Trip = {
   state: "Himachal Pradesh",
   duration: "4 Days / 3 Nights",
   durationDays: 4,
-  departureDate: "Sample Itinerary (Schedule TBA)",
+  departureDate: "Upcoming Cohort (Schedule TBA)",
   departureMonth: "Fall 2026",
-  departureLocation: "Bennett University Campus (Direct Group Pickup)",
+  departureLocation: "Delhi NCR Pickup Hub (Central Departure Point)",
   maxGroupSize: 18,
   minAge: 18,
   price: 7800,
@@ -328,7 +328,7 @@ export const DHARAMSHALA_TRIP: Trip = {
   totalSeats: 18,
   category: "Backpacking",
   difficulty: "Easy",
-  isSampleData: true,
+  isSampleData: false,
   image: "/images/hero-twilight-camp.jpg",
   galleryImages: [
     "/images/hero-twilight-camp.jpg",
@@ -337,10 +337,10 @@ export const DHARAMSHALA_TRIP: Trip = {
   ],
   tagline: "Tibetan culture, mountain monasteries, cafe hopping & scenic Dhauladhar views.",
   description:
-    "Explore the vibrant cultural capital of the Kangra Valley with your Bennett peers. Wander through the quiet monastery courtyards of McLeodganj, taste authentic Tibetan momos and thukpa, hike up to Bhagsu Waterfall, and marvel at the colossal snow-covered Dhauladhar wall.",
+    "Explore the vibrant cultural capital of the Kangra Valley. Wander through the quiet monastery courtyards of McLeodganj, taste authentic Tibetan momos and thukpa, hike up to Bhagsu Waterfall, and marvel at the colossal snow-covered Dhauladhar wall with fellow explorers.",
   highlights: [
-    "Exclusive to Bennett University students",
-    "Indicative Student Budget: ₹7,000 – ₹8,000",
+    "Small curated cohort of 14–18 explorers (Solo & Group friendly)",
+    "Indicative Package Budget: ₹7,000 – ₹8,000",
     "Tsuglagkhang Complex & Dalai Lama Temple visit",
     "Bhagsu Waterfall & Dharamkot cafe exploration",
     "St. John in the Wilderness forest church walk",
@@ -364,16 +364,16 @@ export const DHARAMSHALA_TRIP: Trip = {
     },
     {
       title: "Solo Traveler Friendly",
-      description: "Easily socialize with peers from different campus branches and semesters.",
+      description: "Easily connect with fellow explorers over shared cafe tables and mountain viewpoints.",
       iconName: "Users",
     },
   ],
   itinerary: [
     {
       day: 1,
-      title: "Campus Pickup & Overnight Journey to Kangra",
-      description: "Board comfortable mountain coach from Bennett University. Overnight transit.",
-      activities: ["Departure from Bennett campus", "Trip briefing & group introduction"],
+      title: "Delhi NCR Pickup & Overnight Journey to Kangra",
+      description: "Board comfortable mountain coach from designated Delhi NCR hubs. Overnight transit.",
+      activities: ["Departure from Delhi NCR hub", "Trip briefing & group introduction"],
       stayType: "Comfortable Transit Coach",
     },
     {
@@ -381,32 +381,32 @@ export const DHARAMSHALA_TRIP: Trip = {
       title: "Arrival in McLeodganj & Cultural Landmarks",
       description: "Check in, relax, and explore the Dalai Lama Temple complex and vibrant local street bazaars.",
       activities: ["Check-in at verified hotel/stay", "Dalai Lama Temple visit", "Tibetan market walk"],
-      stayType: "Verified Student Hotel",
+      stayType: "Verified Mountain Hotel",
     },
     {
       day: 3,
       title: "Bhagsu Waterfall, Shiva Cafe & Dharamkot Trails",
       description: "Hike up to Bhagsu Waterfall, visit the historic Bhagsunath Temple, and spend a relaxed afternoon in Dharamkot.",
       activities: ["Hike to Bhagsu Waterfall", "Dharamkot artistic village trail", "Evening sunset viewpoint"],
-      stayType: "Verified Student Hotel",
+      stayType: "Verified Mountain Hotel",
     },
     {
       day: 4,
-      title: "Norbulingka Institute & Campus Return",
+      title: "Norbulingka Institute & Return Journey",
       description: "Visit traditional Tibetan craft workshops at Norbulingka before starting the evening return drive.",
-      activities: ["Norbulingka Tibetan arts exploration", "Group lunch", "Departure back to campus"],
+      activities: ["Norbulingka Tibetan arts exploration", "Group lunch", "Departure back to Delhi NCR"],
       stayType: "Return Transit",
     },
   ],
   accommodation: {
     type: "Clean, Verified Hillside Hotel / Guesthouse",
-    roomSharing: "Triple / Quad student sharing",
+    roomSharing: "Triple / Quad sharing (Twin available on request)",
     description: "Centrally located, secure, and sanitized rooms with scenic valley views.",
     amenities: ["Hot Water", "Clean Bedding", "In-house Dining", "Safety Staff"],
-    notes: "Safe student environment with female safety first guidelines.",
+    notes: "Safe community environment with female safety first guidelines.",
   },
   inclusions: [
-    "Round-trip AC pushback coach from Bennett University",
+    "Round-trip AC pushback coach from Delhi NCR",
     "3 Nights stay in vetted hotel",
     "Daily breakfast and dinner",
     "Sightseeing and guided cultural walks",
@@ -416,8 +416,8 @@ export const DHARAMSHALA_TRIP: Trip = {
   departureSlots: [
     {
       id: "slot-sample-dhar-1",
-      date: "Sample Date",
-      endDate: "Sample End",
+      date: "Upcoming Batch",
+      endDate: "4 Days Later",
       month: "Fall 2026",
       price: 7800,
       availableSeats: 18,
@@ -428,8 +428,12 @@ export const DHARAMSHALA_TRIP: Trip = {
   reviews: [],
   faqs: [
     {
-      question: "Are Bennett students from all years allowed?",
-      answer: "Yes! Students from all batches and departments at Bennett University are welcome to join.",
+      question: "Can I join this trip solo?",
+      answer: "Yes! A significant portion of our travellers sign up solo. We create a welcoming, inclusive environment where you make genuine friends right away.",
+    },
+    {
+      question: "Are these prices and dates finalized?",
+      answer: "This is indicative data reflecting our budget range of ₹7,000–₹8,000. Confirmed departure dates and slots are reserved directly via WhatsApp enquiry.",
     },
   ],
 };
@@ -443,9 +447,9 @@ export const MANALI_TRIP: Trip = {
   state: "Himachal Pradesh",
   duration: "4 Days / 3 Nights",
   durationDays: 4,
-  departureDate: "Sample Itinerary (Schedule TBA)",
+  departureDate: "Upcoming Cohort (Schedule TBA)",
   departureMonth: "Fall 2026",
-  departureLocation: "Bennett University Campus (Direct Group Pickup)",
+  departureLocation: "Delhi NCR Pickup Hub (Central Departure Point)",
   maxGroupSize: 18,
   minAge: 18,
   price: 7999,
@@ -454,15 +458,15 @@ export const MANALI_TRIP: Trip = {
   totalSeats: 18,
   category: "Mountain Trekking",
   difficulty: "Easy-Moderate",
-  isSampleData: true,
+  isSampleData: false,
   image: "/images/emerald-lake.jpg",
   galleryImages: ["/images/emerald-lake.jpg", "/images/hero-camp.jpg"],
   tagline: "Old Manali lanes, Jogini waterfalls, Solang vistas & crisp Himalayan mountain air.",
   description:
-    "The quintessential mountain retreat for Bennett University students. Stroll along the bohemian lanes of Old Manali, trek up to the thundering Jogini Waterfall through apple orchards, and soak in panoramic Himalayan views.",
+    "The quintessential mountain retreat. Stroll along the bohemian lanes of Old Manali, trek up to the thundering Jogini Waterfall through apple orchards, and soak in panoramic Himalayan views with fellow explorers.",
   highlights: [
-    "Exclusive to Bennett University students",
-    "Indicative Student Budget: ₹7,000 – ₹8,000",
+    "Small curated cohort of 14–18 explorers (Solo & Group friendly)",
+    "Indicative Package Budget: ₹7,000 – ₹8,000",
     "Jogini Waterfall pine trail & Vashisht hot springs",
     "Old Manali cafe culture & wooden bridge strolls",
     "Solang Valley mountain vistas",
@@ -476,7 +480,7 @@ export const MANALI_TRIP: Trip = {
     },
     {
       title: "Old Manali Atmosphere",
-      description: "Eclectic cafes, live music, handcrafted bakeries, and student friendly hangout spots.",
+      description: "Eclectic cafes, live music, handcrafted bakeries, and vibrant hangout spots.",
       iconName: "Compass",
     },
     {
@@ -486,16 +490,16 @@ export const MANALI_TRIP: Trip = {
     },
     {
       title: "Safety & Trust",
-      description: "Female safety first, trusted drivers, and carefully verified student accommodations.",
+      description: "Female safety first, trusted drivers, and carefully verified accommodations.",
       iconName: "Shield",
     },
   ],
   itinerary: [
     {
       day: 1,
-      title: "Bennett Campus Departure to Kullu",
-      description: "Evening assembly and departure from campus. Overnight scenic highway drive.",
-      activities: ["Departure from campus", "Ice-breakers & playlist sessions"],
+      title: "Delhi NCR Hub Departure to Kullu",
+      description: "Evening assembly and departure from Delhi NCR. Overnight scenic highway drive.",
+      activities: ["Departure from central hub", "Ice-breakers & playlist sessions"],
       stayType: "Comfortable Transit Coach",
     },
     {
@@ -514,21 +518,21 @@ export const MANALI_TRIP: Trip = {
     },
     {
       day: 4,
-      title: "Kullu Riverfront Exploration & Campus Return",
-      description: "Visit Kullu shawls and local crafts before the return journey back to campus.",
-      activities: ["Kullu valley stopover", "Return transit to Bennett University"],
+      title: "Kullu Riverfront Exploration & Return Journey",
+      description: "Visit Kullu shawls and local crafts before the return journey back to Delhi NCR.",
+      activities: ["Kullu valley stopover", "Return transit to Delhi NCR"],
       stayType: "Return Transit",
     },
   ],
   accommodation: {
     type: "Handpicked Mountain Resort / Cottage",
-    roomSharing: "Triple / Quad student sharing",
-    description: "Secure, hygienic, and heated rooms with hot water and student-friendly amenities.",
+    roomSharing: "Triple / Quad sharing (Twin available on request)",
+    description: "Secure, hygienic, and heated rooms with hot water and mountain hospitality.",
     amenities: ["Hot Water", "Clean Bedding", "Mountain Views", "Safe Environment"],
     notes: "Verified for female traveler comfort and hygiene.",
   },
   inclusions: [
-    "Direct round-trip transport from Bennett University",
+    "Direct round-trip transport from Delhi NCR",
     "3 Nights stay in vetted mountain property",
     "Breakfast & dinner",
     "Guided sightseeing and coordinator support",
@@ -537,8 +541,8 @@ export const MANALI_TRIP: Trip = {
   departureSlots: [
     {
       id: "slot-sample-manali-1",
-      date: "Sample Date",
-      endDate: "Sample End",
+      date: "Upcoming Batch",
+      endDate: "4 Days Later",
       month: "Fall 2026",
       price: 7999,
       availableSeats: 18,
@@ -549,8 +553,12 @@ export const MANALI_TRIP: Trip = {
   reviews: [],
   faqs: [
     {
-      question: "Can I bring my campus friends together?",
+      question: "Can I bring my friend group together?",
       answer: "Yes, you can register with your friend group, or join solo and get grouped into the cohort.",
+    },
+    {
+      question: "Are these prices and dates finalized?",
+      answer: "This is indicative data reflecting our budget range of ₹7,000–₹8,000. Confirmed departure dates and slots are reserved directly via WhatsApp enquiry.",
     },
   ],
 };
@@ -564,9 +572,9 @@ export const SHIMLA_TRIP: Trip = {
   state: "Himachal Pradesh",
   duration: "3 Days / 2 Nights",
   durationDays: 3,
-  departureDate: "Sample Itinerary (Schedule TBA)",
+  departureDate: "Upcoming Cohort (Schedule TBA)",
   departureMonth: "Fall 2026",
-  departureLocation: "Bennett University Campus (Direct Group Pickup)",
+  departureLocation: "Delhi NCR Pickup Hub (Central Departure Point)",
   maxGroupSize: 18,
   minAge: 18,
   price: 7200,
@@ -575,19 +583,19 @@ export const SHIMLA_TRIP: Trip = {
   totalSeats: 18,
   category: "Road Trips",
   difficulty: "Easy",
-  isSampleData: true,
+  isSampleData: false,
   image: "/images/hero-camp.jpg",
   galleryImages: ["/images/hero-camp.jpg", "/images/hero-sunset-campfire.jpg"],
   tagline: "Colonial ridge trails, cedar forest strolls & panoramic Himalayan vistas.",
   description:
-    "A crisp, refreshing weekend escape from the daily college routine. Explore Shimla's historic Mall Road and Ridge, hike through deodar woods in Kufri, and take in the majestic Himalayan snowline.",
+    "A crisp, refreshing weekend escape from the daily city routine. Explore Shimla's historic Mall Road and Ridge, hike through deodar woods in Kufri, and take in the majestic Himalayan snowline.",
   highlights: [
-    "Exclusive to Bennett University students",
-    "Indicative Student Budget: ₹7,000 – ₹8,000",
+    "Small curated cohort of 14–18 explorers (Solo & Group friendly)",
+    "Indicative Package Budget: ₹7,000 – ₹8,000",
     "The Ridge & Mall Road colonial heritage walk",
     "Kufri highland viewpoints & pine walks",
     "Jakhu Temple summit panorama",
-    "Zero hassle planning with campus pickup and drop",
+    "Zero hassle planning with central hub pickup and drop",
   ],
   experienceHighlights: [
     {
@@ -601,22 +609,22 @@ export const SHIMLA_TRIP: Trip = {
       iconName: "Mountain",
     },
     {
-      title: "Campus-to-Mountain Ease",
-      description: "Seamless door-to-door transit from Bennett University directly to your mountain base.",
+      title: "City-to-Mountain Ease",
+      description: "Seamless door-to-door transit from Delhi NCR directly to your mountain base.",
       iconName: "CheckCircle2",
     },
     {
       title: "Female Safety First",
-      description: "Strict safety vetting, verified stays, and supportive student community environment.",
+      description: "Strict safety vetting, verified stays, and supportive community environment.",
       iconName: "Shield",
     },
   ],
   itinerary: [
     {
       day: 1,
-      title: "Departure from Bennett Campus to Shimla",
-      description: "Evening departure from Bennett University campus in AC group coach.",
-      activities: ["Campus pickup", "Overnight scenic drive"],
+      title: "Departure from Delhi NCR to Shimla",
+      description: "Evening departure from Delhi NCR in AC group coach.",
+      activities: ["Central hub pickup", "Overnight scenic drive"],
       stayType: "Comfortable Transit Coach",
     },
     {
@@ -628,21 +636,21 @@ export const SHIMLA_TRIP: Trip = {
     },
     {
       day: 3,
-      title: "Kufri Highland Exploration & Return to Campus",
-      description: "Excursion to Kufri pine trails followed by evening return drive to campus.",
-      activities: ["Kufri scenic trails", "Himalayan panoramic viewpoints", "Return drive to Bennett University"],
+      title: "Kufri Highland Exploration & Return Journey",
+      description: "Excursion to Kufri pine trails followed by evening return drive.",
+      activities: ["Kufri scenic trails", "Himalayan panoramic viewpoints", "Return drive to Delhi NCR"],
       stayType: "Return Transit",
     },
   ],
   accommodation: {
     type: "Clean, Verified Highland Hotel",
-    roomSharing: "Triple / Quad student sharing",
+    roomSharing: "Triple / Quad sharing (Twin available on request)",
     description: "Safe, warm, and comfortable rooms with hot showers and central heating options.",
     amenities: ["Hot Water", "Clean Bedding", "Restaurant", "Safe Surroundings"],
     notes: "Curated with female safety and hygiene standards.",
   },
   inclusions: [
-    "Direct round-trip transport from Bennett University",
+    "Direct round-trip transport from Delhi NCR",
     "2 Nights stay in verified hotel",
     "Daily breakfast and dinner",
     "Guided sightseeing and cohort coordinator support",
@@ -651,8 +659,8 @@ export const SHIMLA_TRIP: Trip = {
   departureSlots: [
     {
       id: "slot-sample-shimla-1",
-      date: "Sample Date",
-      endDate: "Sample End",
+      date: "Upcoming Batch",
+      endDate: "3 Days Later",
       month: "Fall 2026",
       price: 7200,
       availableSeats: 18,
@@ -664,7 +672,11 @@ export const SHIMLA_TRIP: Trip = {
   faqs: [
     {
       question: "Is this suitable for a quick weekend recharge?",
-      answer: "Yes, this itinerary is optimized specifically for university weekend schedules with minimal missed classes.",
+      answer: "Yes, this itinerary is optimized specifically for weekend getaways with zero workday disruption.",
+    },
+    {
+      question: "Are these prices and dates finalized?",
+      answer: "This is indicative data reflecting our budget range of ₹7,000–₹8,000. Confirmed departure dates and slots are reserved directly via WhatsApp enquiry.",
     },
   ],
 };

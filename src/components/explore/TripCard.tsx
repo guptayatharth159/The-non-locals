@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, MapPin, Calendar, Clock, GraduationCap } from "lucide-react";
+import { ArrowUpRight, MapPin, Calendar, Clock, Compass } from "lucide-react";
 import { motion } from "framer-motion";
 import { Trip } from "@/data/trips";
 import ImageWithFallback from "@/components/ui/ImageWithFallback";
@@ -55,8 +55,8 @@ export default function TripCard({ trip, priority = false }: TripCardProps) {
           </span>
 
           <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#183D32] border border-[#D4F938]/40 text-[#D4F938] font-mono font-semibold text-[10px] uppercase tracking-wider">
-            <GraduationCap className="w-3 h-3" />
-            BENNETT EXCLUSIVE
+            <Compass className="w-3 h-3" />
+            CURATED COHORT
           </span>
         </div>
 
@@ -98,7 +98,7 @@ export default function TripCard({ trip, priority = false }: TripCardProps) {
         <div className="flex items-center justify-between pt-1">
           <div>
             <span className="block font-mono text-[10px] text-[#D4F938] uppercase tracking-wider font-semibold">
-              INDICATIVE STUDENT FARE
+              INDICATIVE FARE
             </span>
             <div className="flex items-baseline gap-1.5">
               <span className="font-heading font-extrabold text-2xl text-white">

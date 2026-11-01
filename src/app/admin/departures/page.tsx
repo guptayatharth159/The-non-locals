@@ -190,7 +190,7 @@ export default function AdminDeparturesPage() {
             DEPARTURE MANAGEMENT
           </h1>
           <p className="font-body text-xs sm:text-sm text-white/60">
-            Manage student departure batches, adjust seat availability, and set sold-out statuses.
+            Manage departure batches, adjust seat availability, and set sold-out statuses.
           </p>
         </div>
 

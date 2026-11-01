@@ -40,7 +40,7 @@ export default function TripAccommodation({ accommodation }: TripAccommodationPr
               </span>
 
               <h3 className="font-heading font-bold text-2xl sm:text-3xl uppercase text-white tracking-tight">
-                Authentic & Safe Student Stays
+                Authentic & Safe Handpicked Stays
               </h3>
 
               <p className="font-body text-sm sm:text-base text-white/75 leading-relaxed pt-1">
