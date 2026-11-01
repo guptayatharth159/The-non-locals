@@ -15,8 +15,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  // Query Firestore first, fall back to local data if Firestore is unpopulated
-  let trip = await getTripBySlugFromFirestore(slug);
+  // Query Firestore first, fall back safely to local data during static prerender
+  let trip = null;
+  try {
+    trip = await getTripBySlugFromFirestore(slug);
+  } catch (err) {
+    // Non-fatal fallback for static compilation
+  }
   if (!trip) {
     trip = getTripBySlug(slug) ?? null;
   }
@@ -43,7 +48,12 @@ export default async function TripDetailPage({ params }: PageProps) {
   const { slug } = await params;
 
   // Query Firestore first for live departure slots, seats and itinerary
-  let trip = await getTripBySlugFromFirestore(slug);
+  let trip = null;
+  try {
+    trip = await getTripBySlugFromFirestore(slug);
+  } catch (err) {
+    // Non-fatal fallback for static compilation
+  }
   if (!trip) {
     trip = getTripBySlug(slug) ?? null;
   }
