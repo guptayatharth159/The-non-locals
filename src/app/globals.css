@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #183D32;
+  --color-forest-deep: #0e241e;
+  --color-forest-light: #245547;
+  --color-charcoal: #151916;
+  --color-charcoal-dark: #0b0e0c;
+  --color-charcoal-surface: #1e2420;
+  --color-charcoal-elevated: #28302a;
+  --color-orange: #FF7135;
+  --color-orange-hover: #e85c20;
+  --color-orange-subtle: rgba(255, 113, 53, 0.12);
+  --color-sand: #EDE5D5;
+  --color-sand-light: #F4EFE6;
+  --color-sand-muted: #dcd3bf;
+  --color-offwhite: #F8F7F2;
+  --color-olive: #A3A879;
+  --color-olive-dark: #6e744b;
+  --color-olive-subtle: rgba(163, 168, 121, 0.15);
+  
+  /* Reference Lime Green tokens */
+  --color-lime: #D4F938;
+  --color-lime-hover: #C5EC2E;
+  --color-lime-glow: rgba(212, 249, 56, 0.35);
+
+  --font-heading: var(--font-heading), "Space Grotesk", -apple-system, sans-serif;
+  --font-display: var(--font-display), "Bebas Neue", "Anton", Impact, sans-serif;
+  --font-sans: var(--font-body), "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: var(--font-body), "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ==========================================================================
+   Base Layer & Lenis Smooth Scrolling
+   ========================================================================== */
+html {
+  background-color: #0b0e0c;
+  color: #F8F7F2;
+  font-family: var(--font-body), sans-serif;
+  scroll-behavior: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0b0e0c;
+  color: #F8F7F2;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Selection Color - Lime Green */
+::selection {
+  background-color: #D4F938;
+  color: #0b0e0c;
+}
+
+/* Custom Scrollbar with Dark Ambient Tone */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0e0c;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2420;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4F938;
+}
+
+/* ==========================================================================
+   Typography Classes
+   ========================================================================== */
+.font-heading {
+  font-family: var(--font-heading), "Space Grotesk", sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), "Bebas Neue", sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-body), "DM Sans", sans-serif;
+}
+
+/* Floating animation utilities */
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes subtle-float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes slow-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-subtle-float {
+  animation: subtle-float 5s ease-in-out infinite;
+}
+
+.animate-subtle-float-delayed {
+  animation: subtle-float-delayed 6s ease-in-out infinite 1.5s;
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 26s ease-in-out infinite alternate;
+}

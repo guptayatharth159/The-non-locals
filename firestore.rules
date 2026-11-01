@@ -1,0 +1,67 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Helper: Admin Verification ──────────────────────────────────────────
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // ── 1. trips ────────────────────────────────────────────────────────────
+    match /trips/{tripId} {
+      // Public visitors can only view published trips; admins can view all
+      allow read: if (resource != null && resource.data.published == true) || isAdmin();
+      // Only authorized admins can create, edit, or delete trips
+      allow write: if isAdmin();
+    }
+
+    // ── 2. tripSlots ────────────────────────────────────────────────────────
+    match /tripSlots/{slotId} {
+      // Public visitors can only view published departure dates; admins can view all
+      allow read: if (resource != null && resource.data.published == true) || isAdmin();
+      // Only authorized admins can manage departure dates and capacity
+      allow write: if isAdmin();
+    }
+
+    // ── 3. settings/public ──────────────────────────────────────────────────
+    match /settings/public {
+      // Public visitors can read public settings (official WhatsApp number, etc.)
+      allow read: if true;
+      // Only authorized admins can update settings
+      allow write: if isAdmin();
+    }
+
+    // ── 4. users (Admin Identity Only) ──────────────────────────────────────
+    match /users/{uid} {
+      // Admins can read their own identity profile
+      allow read: if isSignedIn() && request.auth.uid == uid && resource.data.role == 'admin';
+      // No client-side creates or updates — roles provisioned server-side via Admin SDK
+      allow write: if false;
+    }
+
+    // ── 5. Deprecated Collections (Strictly Closed) ─────────────────────────
+    match /bookings/{id} {
+      allow read, write: if false;
+    }
+    match /payments/{id} {
+      allow read, write: if false;
+    }
+    match /utrIndex/{id} {
+      allow read, write: if false;
+    }
+    match /notifications/{id} {
+      allow read, write: if false;
+    }
+
+    // Fallback: Deny everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
