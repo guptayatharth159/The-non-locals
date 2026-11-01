@@ -1,4 +1,4 @@
-import { Expedition, NavItem } from "@/types";
+import type { Expedition, NavItem } from "@/types";
 
 export const BRAND = {
   name: "THE NON LOCALS",
