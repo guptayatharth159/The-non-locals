@@ -5,7 +5,7 @@
   "scripts": {
     "prebuild": "node -e \"const fs = require('fs'); if (fs.existsSync('functions')) { fs.rmSync('functions', { recursive: true, force: true }); }\"",
     "dev": "next dev --webpack",
-    "build": "next build --webpack",
+    "build": "next build --webpack && node -e \"const fs = require('fs'); if (fs.existsSync('out')) { fs.mkdirSync('.vercel/output', { recursive: true }); fs.cpSync('out', '.vercel/output/static', { recursive: true, force: true }); }\"",
     "start": "next start",
     "lint": "eslint"
   },
