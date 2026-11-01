@@ -37,7 +37,7 @@ export default function TripForm({ initialTrip, isNew = false }: TripFormProps) 
   const router = useRouter();
 
   // Basic Info
-  const [id, setId] = useState(initialTrip?.id || `trip_${Date.now()}`);
+  const [id, setId] = useState(() => initialTrip?.id || `trip_${Date.now()}`);
   const [title, setTitle] = useState(initialTrip?.title || "");
   const [slug, setSlug] = useState(initialTrip?.slug || "");
   const [destination, setDestination] = useState(initialTrip?.destination || "");

@@ -35,7 +35,10 @@ export default function AdminGuard({ children }: AdminGuardProps) {
   });
 
   const verifiedRef = useRef(isAdmin);
-  verifiedRef.current = isAdmin;
+
+  useEffect(() => {
+    verifiedRef.current = isAdmin;
+  }, [isAdmin]);
 
   useEffect(() => {
     // If on login page, never block

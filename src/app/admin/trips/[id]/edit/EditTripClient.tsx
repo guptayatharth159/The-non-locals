@@ -65,3 +65,4 @@ export default function EditTripClient() {
 
   return <TripForm initialTrip={trip} isNew={false} />;
 }
+
