@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
-import { ShieldCheck, AlertCircle, ArrowRight, Compass } from "lucide-react";
+import { AlertCircle, ArrowRight, Compass } from "lucide-react";
 
-export default function AdminLoginPage() {
+function AdminLoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const hasUnauthorizedError = searchParams.get("error") === "unauthorized";
@@ -122,3 +122,16 @@ export default function AdminLoginPage() {
   );
 }
 
+export default function AdminLoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-[#0b0e0c] flex items-center justify-center">
+          <div className="w-10 h-10 rounded-full border-2 border-[#D4F938]/30 border-t-[#D4F938] animate-spin" />
+        </div>
+      }
+    >
+      <AdminLoginForm />
+    </Suspense>
+  );
+}
