@@ -5,3 +5,4 @@
 /destinations /adventures 302
 /explore /adventures 302
 /admin/trips/:id/edit /admin/trips/edit?id=:id 302
+

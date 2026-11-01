@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "node -e \"const fs = require('fs'); if (fs.existsSync('functions')) { fs.rmSync('functions', { recursive: true, force: true }); }\"",
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
