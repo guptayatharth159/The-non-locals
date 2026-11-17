@@ -42,14 +42,14 @@ export const metadata: Metadata = {
   authors: [{ name: BRAND.name }],
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.png", type: "image/png", sizes: "192x192" },
-      { url: "/images/logo.png", type: "image/png", sizes: "533x533" },
+      { url: "/icon.png?v=3", type: "image/png", sizes: "192x192" },
+      { url: "/images/logo.png?v=3", type: "image/png", sizes: "533x533" },
+      { url: "/favicon.ico?v=3", sizes: "any" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png?v=3", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
+    shortcut: "/favicon.ico?v=3",
   },
   openGraph: {
     title: `${BRAND.name} | ${BRAND.tagline}`,
@@ -87,6 +87,13 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${dmSans.variable} ${bebasNeue.variable} dark antialiased`}
     >
+      <head>
+        <link rel="icon" href="/icon.png?v=3" type="image/png" sizes="192x192" />
+        <link rel="icon" href="/images/logo.png?v=3" type="image/png" sizes="533x533" />
+        <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.ico?v=3" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" sizes="180x180" />
+      </head>
       <body
         suppressHydrationWarning
         className="min-h-screen bg-[#0b0e0c] text-[#F8F7F2] font-body selection:bg-[#D4F938] selection:text-[#0b0e0c]"
