@@ -202,7 +202,7 @@ I would like to book an expedition for our group. Here are our booking details:
 
 👤 PRIMARY CONTACT:
 • Name: Yatharth Gupta
-• Phone: +91 98765 43210
+• Phone: +91 7485 888 279
 
 🎒 TRAVELLER DETAILS:
 1. Yatharth Gupta (Age: 20)
@@ -217,7 +217,7 @@ Please let us know slot availability and how to complete the payment to lock our
 
 ### 4.5 Click-to-Chat Deep Linking & URL Encoding
 - Target URL: `https://wa.me/${sanitizedPhone}?text=${encodeURIComponent(formattedMessage)}`
-- `sanitizedPhone` is stripped of all spaces, dashes, and leading `+`, retaining only country code and digits (e.g., `919876543210`).
+- `sanitizedPhone` is stripped of all spaces, dashes, and leading `+`, retaining only country code and digits (e.g., `917485888279`).
 - Opens with `target="_blank"` and `rel="noopener noreferrer"`.
 - Supports WhatsApp Web on desktop and native WhatsApp app via iOS/Android deep link protocols.
 - **Notice to Customer:** An intuitive banner states:
@@ -304,7 +304,7 @@ Because online automated seat holds are deprecated, availability is managed with
 - **Archive Past Departures:** One-click archiving of past dates to keep the customer view clean.
 
 #### Module D: Website Settings Management
-- **Official WhatsApp Number:** Direct input for the phone number powering the website's booking enquiry CTA (e.g., `+91 98765 43210`).
+- **Official WhatsApp Number:** Direct input for the phone number powering the website's booking enquiry CTA (e.g., `+91 7485 888 279`).
 - **Emergency / Backup Contact:** Secondary contact number.
 - **Payment Reference Info (Optional):**
   * Business UPI ID (e.g. `thenonlocals@okhdfcbank`) for display or manual sharing.

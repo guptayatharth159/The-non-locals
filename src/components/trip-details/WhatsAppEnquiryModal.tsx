@@ -54,7 +54,7 @@ export default function WhatsAppEnquiryModal({
   const [notes, setNotes] = useState("");
 
   // ── UI States ──────────────────────────────────────────────────────────────
-  const [whatsappNumber, setWhatsappNumber] = useState<string>("919876543210");
+  const [whatsappNumber, setWhatsappNumber] = useState<string>("917485888279");
   const [isLoadingSettings, setIsLoadingSettings] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isSuccessSent, setIsSuccessSent] = useState(false);
@@ -454,7 +454,7 @@ export default function WhatsAppEnquiryModal({
                           type="tel"
                           value={primaryPhone}
                           onChange={(e) => setPrimaryPhone(e.target.value)}
-                          placeholder="98765 43210"
+                          placeholder="74858 88279"
                           maxLength={15}
                           className="w-full px-3.5 py-2.5 rounded-r-xl bg-black/60 border border-white/15 text-white font-mono text-xs focus:border-[#D4F938] focus:outline-none transition-colors"
                         />

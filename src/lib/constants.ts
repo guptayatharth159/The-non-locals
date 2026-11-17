@@ -12,7 +12,7 @@ export const BRAND = {
   baseCampLocation: "Western Himalayas, India",
   contactEmail: "hello@thenonlocals.com",
   instagramHandle: "@thenonlocals",
-  phone: "+91 98765 43210",
+  phone: "+91 7485 888 279",
 };
 
 export const NAV_ITEMS: NavItem[] = [

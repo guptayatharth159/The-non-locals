@@ -122,11 +122,11 @@ test("WhatsApp Enquiry Modal validates party size and phone format", () => {
 
 test("WhatsApp URL generator produces strictly valid click-to-chat links", () => {
   // Simulate message generation logic from WhatsAppEnquiryModal
-  const cleanPhone = "919876543210".replace(/[^0-9]/g, "");
+  const cleanPhone = "917485888279".replace(/[^0-9]/g, "");
   const tripTitle = "JIBHI & TIRTHAN VALLEY EXPEDITION";
   const slotDate = "14 Nov – 17 Nov 2026";
   const primaryName = "Yatharth Gupta";
-  const primaryPhone = "9876543210";
+  const primaryPhone = "9811122233";
   const joiningType = "Solo";
   const travellers = [{ name: "Yatharth Gupta", age: "21" }];
 
@@ -155,7 +155,7 @@ Please let me know seat availability and next steps for payment and confirmation
   const encoded = encodeURIComponent(message);
   const waUrl = `https://wa.me/${cleanPhone}?text=${encoded}`;
 
-  assert.ok(waUrl.startsWith("https://wa.me/919876543210?text="), "Must use standard wa.me format");
+  assert.ok(waUrl.startsWith("https://wa.me/917485888279?text="), "Must use standard wa.me format");
   assert.ok(waUrl.includes(encodeURIComponent(tripTitle)), "Must include encoded trip title");
   assert.ok(waUrl.includes(encodeURIComponent(slotDate)), "Must include encoded slot date");
   assert.ok(waUrl.includes(encodeURIComponent(primaryName)), "Must include encoded primary contact");

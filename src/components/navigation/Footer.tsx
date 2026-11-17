@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="lg:col-span-5 flex flex-col justify-end">
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20get%20updates%20on%20upcoming%20trips%20from%20The%20Non%20Locals"
+                href="https://wa.me/917485888279?text=Hi%2C%20I%20would%20like%20to%20get%20updates%20on%20upcoming%20trips%20from%20The%20Non%20Locals"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full bg-[#D4F938] hover:bg-[#C5EC2E] text-black font-heading font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 hover:shadow-[0_0_25px_rgba(212,249,56,0.5)] cursor-pointer"

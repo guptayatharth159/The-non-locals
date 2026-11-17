@@ -42,7 +42,7 @@ runTest("Public trip catalog is available without authentication", () => {
 runTest("WhatsApp message generator produces properly structured format", () => {
   const trip = SAMPLE_TRIPS[0];
   const primaryName = "Yatharth Gupta";
-  const primaryPhone = "9876543210";
+  const primaryPhone = "9811122233";
   const slotDate = "Dec 20, 2026";
   const travellers = [
     { fullName: "Yatharth Gupta", age: "20" },
@@ -61,9 +61,9 @@ runTest("WhatsApp message generator produces properly structured format", () => 
   assert.ok(message.includes("Rohan Sharma"), "Must include traveller names");
   assert.ok(message.includes("💬 SPECIAL REQUESTS"), "Must include special requests");
 
-  const destinationPhone = "919876543210";
+  const destinationPhone = "917485888279";
   const waUrl = `https://wa.me/${destinationPhone}?text=${encodeURIComponent(message)}`;
-  assert.ok(waUrl.startsWith("https://wa.me/919876543210?text="), "Click to chat URL must match wa.me format");
+  assert.ok(waUrl.startsWith("https://wa.me/917485888279?text="), "Click to chat URL must match wa.me format");
 });
 
 runTest("Public navigation header contains ZERO customer login links", () => {

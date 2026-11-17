@@ -166,7 +166,7 @@ export default function AdminSettingsPage() {
 
         <div className="space-y-1.5 font-mono text-xs max-w-md">
           <label className="block text-white/60 uppercase">
-            WhatsApp Business Number (with country code, e.g. 919876543210) *
+            WhatsApp Business Number (with country code, e.g. 917485888279) *
           </label>
           <div className="flex">
             <span className="inline-flex items-center px-3.5 rounded-l-xl bg-white/5 border border-r-0 border-white/15 text-white/60 font-mono text-xs">
@@ -179,7 +179,7 @@ export default function AdminSettingsPage() {
               onChange={(e) =>
                 setSettings((prev) => ({ ...prev, whatsappNumber: e.target.value }))
               }
-              placeholder="919876543210"
+              placeholder="917485888279"
               className="w-full px-3.5 py-2.5 rounded-r-xl bg-black/60 border border-white/15 text-white font-mono text-xs focus:border-[#D4F938] focus:outline-none"
             />
           </div>
@@ -227,7 +227,7 @@ export default function AdminSettingsPage() {
               onChange={(e) =>
                 setSettings((prev) => ({ ...prev, backupPhone: e.target.value }))
               }
-              placeholder="+91 98765 43210"
+              placeholder="+91 7485 888 279"
               className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white font-mono text-xs focus:border-[#D4F938] focus:outline-none"
             />
           </div>

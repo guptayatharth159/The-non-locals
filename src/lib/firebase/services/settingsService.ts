@@ -17,7 +17,7 @@ const DEFAULT_SETTINGS: PublicWebsiteSettings = {
   whatsappNumber:
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ||
     BRAND.phone.replace(/[^0-9]/g, "") ||
-    "919876543210",
+    "917485888279",
   backupPhone: BRAND.phone,
   supportEmail: BRAND.contactEmail,
   agencyUpiId: "",
