@@ -18,7 +18,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Trip, DepartureSlot } from "@/data/trips";
-import { getPublicSettings } from "@/lib/firebase/services/settingsService";
 
 interface WhatsAppEnquiryModalProps {
   isOpen: boolean;
@@ -54,8 +53,7 @@ export default function WhatsAppEnquiryModal({
   const [notes, setNotes] = useState("");
 
   // ── UI States ──────────────────────────────────────────────────────────────
-  const [whatsappNumber, setWhatsappNumber] = useState<string>("917485888279");
-  const [isLoadingSettings, setIsLoadingSettings] = useState(false);
+  const destinationPhone = "917485888279";
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isSuccessSent, setIsSuccessSent] = useState(false);
   const [lastGeneratedUrl, setLastGeneratedUrl] = useState<string>("");
@@ -81,28 +79,6 @@ export default function WhatsAppEnquiryModal({
       });
     }
   }, [initialTravellers]);
-
-  // Fetch admin-configured WhatsApp number
-  useEffect(() => {
-    let isMounted = true;
-    async function loadSettings() {
-      setIsLoadingSettings(true);
-      try {
-        const settings = await getPublicSettings();
-        if (isMounted && settings.whatsappNumber) {
-          setWhatsappNumber(settings.whatsappNumber);
-        }
-      } catch (e) {
-        console.warn("[WhatsAppEnquiryModal] Error loading settings:", e);
-      } finally {
-        if (isMounted) setIsLoadingSettings(false);
-      }
-    }
-    loadSettings();
-    return () => {
-      isMounted = false;
-    };
-  }, []);
 
   // When joining solo, keep traveller 1 synced to primary name if empty
   const handlePrimaryNameChange = (val: string) => {
@@ -185,8 +161,7 @@ export default function WhatsAppEnquiryModal({
       }
     }
 
-    // 5. WhatsApp Business Phone
-    const destinationPhone = whatsappNumber.replace(/[^0-9]/g, "");
+    // 5. WhatsApp Business Phone (Official Line: +91 7485 888 279)
     if (!destinationPhone || destinationPhone.length < 8) {
       return {
         isValid: false,
@@ -553,8 +528,7 @@ export default function WhatsAppEnquiryModal({
                   <button
                     type="button"
                     onClick={handleProceedToWhatsApp}
-                    disabled={isLoadingSettings}
-                    className="w-full py-4 px-6 rounded-full bg-[#25D366] hover:bg-[#20BA5A] active:scale-[0.99] text-white font-heading font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2.5 shadow-[0_0_25px_rgba(37,211,102,0.4)] cursor-pointer disabled:opacity-50"
+                    className="w-full py-4 px-6 rounded-full bg-[#25D366] hover:bg-[#20BA5A] active:scale-[0.99] text-white font-heading font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2.5 shadow-[0_0_25px_rgba(37,211,102,0.4)] cursor-pointer"
                   >
                     <MessageCircle className="w-5 h-5 shrink-0" />
                     <span>CONTINUE WITH WHATSAPP ({travellers.length} {travellers.length === 1 ? "EXPLORER" : "EXPLORERS"})</span>

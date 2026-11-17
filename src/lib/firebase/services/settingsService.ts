@@ -54,10 +54,18 @@ export async function getPublicSettings(): Promise<PublicWebsiteSettings> {
 
     if (snap.exists()) {
       const data = snap.data();
+      // Guard against stale Firestore phone records
+      const isStalePhone = (p?: string) =>
+        !p || p.includes("7617787544") || p.includes("8076045353") || p.length < 10;
+
       const loaded: PublicWebsiteSettings = {
         ...DEFAULT_SETTINGS,
-        whatsappNumber: data.whatsappNumber || DEFAULT_SETTINGS.whatsappNumber,
-        backupPhone: data.backupPhone || DEFAULT_SETTINGS.backupPhone,
+        whatsappNumber: isStalePhone(data.whatsappNumber)
+          ? "917485888279"
+          : data.whatsappNumber.replace(/[^0-9]/g, ""),
+        backupPhone: isStalePhone(data.backupPhone)
+          ? "+91 7485 888 279"
+          : data.backupPhone,
         supportEmail: data.supportEmail || DEFAULT_SETTINGS.supportEmail,
         agencyUpiId: data.agencyUpiId || data.upiId || "",
         agencyUpiName: data.agencyUpiName || "THE NON LOCALS",

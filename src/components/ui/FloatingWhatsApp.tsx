@@ -2,11 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { getPublicSettings } from "@/lib/firebase/services/settingsService";
 
 export default function FloatingWhatsApp() {
   const pathname = usePathname();
-  const [whatsappNumber, setWhatsappNumber] = useState<string>("917485888279");
   const [showTooltip, setShowTooltip] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
@@ -14,19 +12,6 @@ export default function FloatingWhatsApp() {
   const isTripPage = pathname?.startsWith("/trips/");
 
   useEffect(() => {
-    let isMounted = true;
-    async function loadSettings() {
-      try {
-        const settings = await getPublicSettings();
-        if (isMounted && settings.whatsappNumber) {
-          setWhatsappNumber(settings.whatsappNumber.replace(/[^0-9]/g, ""));
-        }
-      } catch (e) {
-        // Fallback to default number
-      }
-    }
-    loadSettings();
-
     // Show initial teaser tooltip after 2.5 seconds, then hide after 5 seconds
     const timer = setTimeout(() => {
       setShowTooltip(true);
@@ -37,14 +22,14 @@ export default function FloatingWhatsApp() {
     }, 2500);
 
     return () => {
-      isMounted = false;
       clearTimeout(timer);
     };
   }, []);
 
+  // Approved official WhatsApp line for THE NON LOCALS
+  const destinationPhone = "917485888279";
   const prefilledMessage =
     "Hi THE NON LOCALS! 🏔️ I have an enquiry about your upcoming Himalayan group expeditions.";
-  const destinationPhone = whatsappNumber.replace(/[^0-9]/g, "") || "917485888279";
   const whatsappUrl = `https://wa.me/${destinationPhone}?text=${encodeURIComponent(
     prefilledMessage
   )}`;
