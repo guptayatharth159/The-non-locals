@@ -23,11 +23,9 @@ interface FilterBarProps {
 
 const CATEGORIES: { label: string; value: string }[] = [
   { label: "All Categories", value: "All" },
-  { label: "Mountain Trekking", value: "Mountain Trekking" },
-  { label: "Camping", value: "Camping" },
-  { label: "Road Trips", value: "Road Trips" },
-  { label: "Water Adventures", value: "Water Adventures" },
   { label: "Backpacking", value: "Backpacking" },
+  { label: "Mountain Trekking", value: "Mountain Trekking" },
+  { label: "Road Trips", value: "Road Trips" },
 ];
 
 const BUDGET_RANGES = [

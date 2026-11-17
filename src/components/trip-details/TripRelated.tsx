@@ -35,7 +35,7 @@ export default function TripRelated({ currentSlug }: TripRelatedProps) {
           href="/adventures"
           className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-white/70 hover:text-[#D4F938] transition-colors"
         >
-          <span>VIEW ALL 18+ TRIPS</span>
+          <span>VIEW ALL EXPEDITIONS</span>
           <ArrowRight className="w-3.5 h-3.5" />
         </Link>
       </div>

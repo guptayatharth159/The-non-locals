@@ -105,33 +105,21 @@ export interface CategoryInfo {
 export const CATEGORIES_DATA: CategoryInfo[] = [
   {
     name: "Backpacking",
-    count: 4,
+    count: 2,
     image: "/images/hero-misty-lake-canoe.jpg",
     tagline: "Curated cohorts, mountain cafes & local homestays",
   },
   {
     name: "Mountain Trekking",
-    count: 4,
-    image: "/images/hero-crystal-lake.jpg",
+    count: 1,
+    image: "/images/emerald-lake.jpg",
     tagline: "Pine trails, waterfall hikes & high ridges",
   },
   {
-    name: "Camping",
-    count: 3,
-    image: "/images/hero-camp.jpg",
-    tagline: "Starry skies, bonfires & riverside tents",
-  },
-  {
     name: "Road Trips",
-    count: 4,
-    image: "/images/hero-twilight-camp.jpg",
+    count: 1,
+    image: "/images/hero-camp.jpg",
     tagline: "Scenic mountain highways & highland passes",
-  },
-  {
-    name: "Water Adventures",
-    count: 2,
-    image: "/images/hero-sunset-campfire.jpg",
-    tagline: "Trout streams, glacial riverbanks & alpine lakes",
   },
 ];
 
@@ -681,58 +669,76 @@ export const SHIMLA_TRIP: Trip = {
   ],
 };
 
-// Legacy compatible slugs to ensure existing links work seamlessly
-export const HAMPTA_TRIP: Trip = {
-  ...MANALI_TRIP,
-  id: "hampta-pass-expedition",
-  slug: "hampta-pass-expedition",
-};
-
-export const SPITI_TRIP: Trip = {
-  ...DHARAMSHALA_TRIP,
-  id: "spiti-valley-expedition",
-  slug: "spiti-valley-expedition",
-};
-
-export const KASOL_TRIP: Trip = {
-  ...FEATURED_TRIP,
-  id: "kasol-backpacking-trip",
-  slug: "kasol-backpacking-trip",
-};
-
-export const MANALI_ESCAPE_TRIP: Trip = {
-  ...MANALI_TRIP,
-  id: "manali-adventure-escape",
-  slug: "manali-adventure-escape",
-};
-
-export const SAMPLE_TRIPS: Trip[] = [
+// ── Official Confirmed Expeditions (No Duplicates) ───────────────────────────
+export const CONFIRMED_TRIPS: Trip[] = [
   FEATURED_TRIP,
   DHARAMSHALA_TRIP,
   MANALI_TRIP,
   SHIMLA_TRIP,
-  HAMPTA_TRIP,
-  SPITI_TRIP,
-  KASOL_TRIP,
-  MANALI_ESCAPE_TRIP,
 ];
 
-export const ALL_TRIPS: Trip[] = SAMPLE_TRIPS;
+// SAMPLE_TRIPS and ALL_TRIPS strictly hold only unique verified expeditions
+export const SAMPLE_TRIPS: Trip[] = CONFIRMED_TRIPS;
+export const ALL_TRIPS: Trip[] = CONFIRMED_TRIPS;
+
+// Legacy slugs mapping to prevent broken external bookmarks if users access old URLs
+const LEGACY_SLUG_MAP: Record<string, Trip> = {
+  "hampta-pass-expedition": MANALI_TRIP,
+  "spiti-valley-expedition": DHARAMSHALA_TRIP,
+  "kasol-backpacking-trip": FEATURED_TRIP,
+  "manali-adventure-escape": MANALI_TRIP,
+};
 
 export function getTripBySlug(slug: string): Trip | undefined {
-  return ALL_TRIPS.find((t) => t.slug === slug);
+  const direct = ALL_TRIPS.find((t) => t.slug === slug);
+  if (direct) return direct;
+  return LEGACY_SLUG_MAP[slug];
 }
 
 export function getAllTripSlugs(): string[] {
-  return ALL_TRIPS.map((t) => t.slug);
+  return [
+    ...CONFIRMED_TRIPS.map((t) => t.slug),
+    ...Object.keys(LEGACY_SLUG_MAP),
+  ];
 }
 
 export function getRelatedTrips(currentSlug: string, count: number = 3): Trip[] {
   const current = getTripBySlug(currentSlug);
-  const others = ALL_TRIPS.filter((t) => t.slug !== currentSlug);
+  const others = CONFIRMED_TRIPS.filter((t) => t.slug !== currentSlug && (!current || t.id !== current.id));
   if (!current) return others.slice(0, count);
 
   const sameCategory = others.filter((t) => t.category === current.category);
   const remaining = others.filter((t) => t.category !== current.category);
   return [...sameCategory, ...remaining].slice(0, count);
+}
+
+/**
+ * Robust deduplication helper to ensure no duplicate trips exist
+ * checks ID, slug, and normalized title
+ */
+export function deduplicateTrips(trips: Trip[]): Trip[] {
+  const seenIds = new Set<string>();
+  const seenSlugs = new Set<string>();
+  const seenTitles = new Set<string>();
+  const unique: Trip[] = [];
+
+  for (const trip of trips) {
+    const idKey = (trip.id || "").toLowerCase().trim();
+    const slugKey = (trip.slug || trip.id || "").toLowerCase().trim();
+    const titleKey = (trip.title || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
+    const isDuplicate =
+      (idKey && seenIds.has(idKey)) ||
+      (slugKey && seenSlugs.has(slugKey)) ||
+      (titleKey && seenTitles.has(titleKey));
+
+    if (!isDuplicate) {
+      if (idKey) seenIds.add(idKey);
+      if (slugKey) seenSlugs.add(slugKey);
+      if (titleKey) seenTitles.add(titleKey);
+      unique.push(trip);
+    }
+  }
+
+  return unique;
 }

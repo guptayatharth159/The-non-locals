@@ -10,7 +10,7 @@ import FilterBar, { FilterState } from "@/components/explore/FilterBar";
 import TripCard from "@/components/explore/TripCard";
 import ExploreCTA from "@/components/explore/ExploreCTA";
 import NonNegotiables from "@/components/brand/NonNegotiables";
-import { SAMPLE_TRIPS, Trip } from "@/data/trips";
+import { SAMPLE_TRIPS, Trip, deduplicateTrips } from "@/data/trips";
 import { fetchTripsWithFallback, seedInitialTripsIfEmpty } from "@/lib/firebase/services/tripsService";
 import { Sparkles, Compass, RotateCcw, AlertCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,8 +18,8 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function AdventuresPage() {
   const tripsSectionRef = useRef<HTMLDivElement>(null);
 
-  // Firestore Trips State - initialized with confirmed published expeditions so there is never a flash of 0
-  const [trips, setTrips] = useState<Trip[]>(() => SAMPLE_TRIPS.filter((t) => t.published !== false));
+  // Firestore Trips State - initialized with confirmed published expeditions with zero duplicates
+  const [trips, setTrips] = useState<Trip[]>(() => deduplicateTrips(SAMPLE_TRIPS.filter((t) => t.published !== false)));
   const [loading, setLoading] = useState(false);
   const [isLiveFromFirestore, setIsLiveFromFirestore] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -32,7 +32,7 @@ export default function AdventuresPage() {
       try {
         const result = await fetchTripsWithFallback();
         if (isMounted) {
-          const published = result.trips.filter((t) => t.published !== false);
+          const published = deduplicateTrips(result.trips.filter((t) => t.published !== false));
           if (published.length > 0) {
             setTrips(published);
           }

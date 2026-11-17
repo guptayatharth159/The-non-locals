@@ -10,7 +10,7 @@ import {
   type DocumentData,
 } from "firebase/firestore";
 import { db } from "@/lib/firebase/client";
-import { Trip, DepartureSlot, SAMPLE_TRIPS } from "@/data/trips";
+import { Trip, DepartureSlot, SAMPLE_TRIPS, deduplicateTrips } from "@/data/trips";
 
 /**
  * Transforms a Firestore trip document to the frontend Trip interface.
@@ -78,16 +78,18 @@ export async function getPublishedTripsFromFirestore(): Promise<Trip[]> {
       const allQ = query(tripsRef);
       const allSnapshot = await getDocs(allQ);
       if (!allSnapshot.empty) {
-        return allSnapshot.docs
+        const rawTrips = allSnapshot.docs
           .map((docSnap) => mapDocToTrip(docSnap.id, docSnap.data()))
           .filter((t) => t.published !== false);
+        return deduplicateTrips(rawTrips);
       }
       return [];
     }
 
-    return snapshot.docs
+    const rawTrips = snapshot.docs
       .map((docSnap) => mapDocToTrip(docSnap.id, docSnap.data()))
       .filter((t) => t.published !== false);
+    return deduplicateTrips(rawTrips);
   } catch (error) {
     console.warn("[tripsService] Firestore getPublishedTrips error:", error);
     throw error;
@@ -160,14 +162,14 @@ export async function fetchTripsWithFallback(): Promise<{ trips: Trip[]; isLiveF
   try {
     const firestoreTrips = await getPublishedTripsFromFirestore();
     if (firestoreTrips.length > 0) {
-      return { trips: firestoreTrips, isLiveFirestore: true };
+      return { trips: deduplicateTrips(firestoreTrips), isLiveFirestore: true };
     }
   } catch (err) {
     console.warn("[tripsService] Firestore unavailable, using static trip data fallback:", err);
   }
 
-  // Graceful fallback to approved static trips (published only)
-  const publishedSampleTrips = SAMPLE_TRIPS.filter((t) => t.published !== false);
+  // Graceful fallback to approved static trips (published only, deduplicated)
+  const publishedSampleTrips = deduplicateTrips(SAMPLE_TRIPS.filter((t) => t.published !== false));
   return { trips: publishedSampleTrips, isLiveFirestore: false };
 }
 
@@ -295,7 +297,8 @@ export async function getAllTripsForAdmin(): Promise<Trip[]> {
     const tripsRef = collection(db, "trips");
     const snapshot = await getDocs(tripsRef);
     if (!snapshot.empty) {
-      const trips = snapshot.docs.map((docSnap) => mapDocToTrip(docSnap.id, docSnap.data()));
+      const rawTrips = snapshot.docs.map((docSnap) => mapDocToTrip(docSnap.id, docSnap.data()));
+      const trips = deduplicateTrips(rawTrips);
       adminTripsCache = trips;
       adminTripsCacheTime = Date.now();
       return trips;
