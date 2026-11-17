@@ -6,7 +6,7 @@ export const BRAND = {
   secondaryTagline: "MORE THAN A TRIP, IT'S AN EXPERIENCE.",
   shortDescription:
     "A curated travel community for spirited explorers, road-trippers, and weekend wanderers who want to discover new places, meet amazing people, and experience something truly beyond the ordinary.",
-  budgetNote: "Indicative Budget: ₹7,000 – ₹8,000",
+  reservationNote: "Coordinated small cohort Himalayan expeditions",
   establishedYear: "2024",
   baseCampCoordinates: "32.2396° N, 77.1887° E",
   baseCampLocation: "Western Himalayas, India",
@@ -81,7 +81,6 @@ export const CONFIRMED_DESTINATIONS = [
     title: "Jibhi – Tirthan Valley",
     region: "Tirthan Valley, Himachal Pradesh",
     highlight: "Hidden waterfalls, pine trails & serene wooden homestays",
-    indicativePrice: "₹7,499",
     category: "OFFBEAT EXPLORATION",
     image: "/images/hero-misty-lake-canoe.jpg",
     slug: "jibhi-tirthan-escape",
@@ -91,7 +90,6 @@ export const CONFIRMED_DESTINATIONS = [
     title: "Dharamshala – McLeodganj",
     region: "Kangra Valley, Himachal Pradesh",
     highlight: "Tibetan culture, mountain monasteries & cafe trails",
-    indicativePrice: "₹7,800",
     category: "CULTURE & HERITAGE",
     image: "/images/hero-twilight-camp.jpg",
     slug: "dharamshala-mcleodganj-retreat",
@@ -101,7 +99,6 @@ export const CONFIRMED_DESTINATIONS = [
     title: "Manali – Kullu",
     region: "Kullu Valley, Himachal Pradesh",
     highlight: "Alpine passes, cedar forests & Old Manali wanderlust",
-    indicativePrice: "₹7,999",
     category: "MOUNTAIN ADVENTURE",
     image: "/images/emerald-lake.jpg",
     slug: "manali-kullu-adventure",
@@ -111,7 +108,6 @@ export const CONFIRMED_DESTINATIONS = [
     title: "Shimla – Kufri",
     region: "Shimla Hills, Himachal Pradesh",
     highlight: "Colonial architectural trails & panoramic Himalayan ridges",
-    indicativePrice: "₹7,200",
     category: "SCENIC HIGHLANDS",
     image: "/images/hero-camp.jpg",
     slug: "shimla-kufri-getaway",
@@ -122,7 +118,7 @@ export const CONFIRMED_DESTINATIONS = [
 export const WHY_TRAVEL_WITH_US = [
   {
     title: "Affordable Group Adventures",
-    description: "Carefully designed for spirited explorers with realistic, accessible group travel budgets.",
+    description: "Carefully designed for spirited explorers with authentic experiences and transparent group travel planning.",
     icon: "BadgePercent",
   },
   {

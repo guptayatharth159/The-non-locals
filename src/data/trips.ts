@@ -156,7 +156,7 @@ export const FEATURED_TRIP: Trip = {
     "A curated escape into the untouched valleys of Jibhi and Tirthan. Wind through pine-canopied trails, explore secret mountain waterfalls, visit ancient towers of Chehni Kothi, and unwind by fresh trout streams with fellow spirited explorers.",
   highlights: [
     "Small curated cohort of 14–18 explorers (Solo & Group friendly)",
-    "Indicative Package Budget: ₹7,000 – ₹8,000",
+    "Verified mountain homestays, wholesome meals & guided transfers included",
     "Hidden waterfalls & pine forest nature trails",
     "Traditional Chehni Kothi fortified wooden tower walk",
     "Riverside bonfire & acoustic evening sessions",
@@ -283,9 +283,9 @@ export const FEATURED_TRIP: Trip = {
         "Our expeditions are open to curious explorers, young professionals, and spirited travellers looking for genuine community travel in small, curated cohorts (14–18 explorers).",
     },
     {
-      question: "Are these prices and dates finalized?",
+      question: "How do I book my trip and confirm slot availability?",
       answer:
-        "This is indicative data reflecting our communicated budget range of ₹7,000–₹8,000. Confirmed departure schedules and slot reservations are coordinated directly via WhatsApp.",
+        "Click 'BOOK YOUR TRIP' on this page, choose your preferred batch and party size, and enter your details. We coordinate directly with you on WhatsApp to confirm slot availability, group details, and booking confirmation.",
     },
     {
       question: "What safety protocols are maintained for female travellers?",
@@ -328,7 +328,7 @@ export const DHARAMSHALA_TRIP: Trip = {
     "Explore the vibrant cultural capital of the Kangra Valley. Wander through the quiet monastery courtyards of McLeodganj, taste authentic Tibetan momos and thukpa, hike up to Bhagsu Waterfall, and marvel at the colossal snow-covered Dhauladhar wall with fellow explorers.",
   highlights: [
     "Small curated cohort of 14–18 explorers (Solo & Group friendly)",
-    "Indicative Package Budget: ₹7,000 – ₹8,000",
+    "Verified mountain homestays, wholesome meals & guided transfers included",
     "Tsuglagkhang Complex & Dalai Lama Temple visit",
     "Bhagsu Waterfall & Dharamkot cafe exploration",
     "St. John in the Wilderness forest church walk",
@@ -420,8 +420,8 @@ export const DHARAMSHALA_TRIP: Trip = {
       answer: "Yes! A significant portion of our travellers sign up solo. We create a welcoming, inclusive environment where you make genuine friends right away.",
     },
     {
-      question: "Are these prices and dates finalized?",
-      answer: "This is indicative data reflecting our budget range of ₹7,000–₹8,000. Confirmed departure dates and slots are reserved directly via WhatsApp enquiry.",
+      question: "How do I book my trip and confirm slot availability?",
+      answer: "Click 'BOOK YOUR TRIP' on this page, choose your preferred batch and party size, and enter your details. We coordinate directly with you on WhatsApp to confirm slot availability, group details, and booking confirmation.",
     },
   ],
 };
@@ -454,7 +454,7 @@ export const MANALI_TRIP: Trip = {
     "The quintessential mountain retreat. Stroll along the bohemian lanes of Old Manali, trek up to the thundering Jogini Waterfall through apple orchards, and soak in panoramic Himalayan views with fellow explorers.",
   highlights: [
     "Small curated cohort of 14–18 explorers (Solo & Group friendly)",
-    "Indicative Package Budget: ₹7,000 – ₹8,000",
+    "Verified mountain homestays, wholesome meals & guided transfers included",
     "Jogini Waterfall pine trail & Vashisht hot springs",
     "Old Manali cafe culture & wooden bridge strolls",
     "Solang Valley mountain vistas",
@@ -545,8 +545,8 @@ export const MANALI_TRIP: Trip = {
       answer: "Yes, you can register with your friend group, or join solo and get grouped into the cohort.",
     },
     {
-      question: "Are these prices and dates finalized?",
-      answer: "This is indicative data reflecting our budget range of ₹7,000–₹8,000. Confirmed departure dates and slots are reserved directly via WhatsApp enquiry.",
+      question: "How do I book my trip and confirm slot availability?",
+      answer: "Click 'BOOK YOUR TRIP' on this page, choose your preferred batch and party size, and enter your details. We coordinate directly with you on WhatsApp to confirm slot availability, group details, and booking confirmation.",
     },
   ],
 };
@@ -579,7 +579,7 @@ export const SHIMLA_TRIP: Trip = {
     "A crisp, refreshing weekend escape from the daily city routine. Explore Shimla's historic Mall Road and Ridge, hike through deodar woods in Kufri, and take in the majestic Himalayan snowline.",
   highlights: [
     "Small curated cohort of 14–18 explorers (Solo & Group friendly)",
-    "Indicative Package Budget: ₹7,000 – ₹8,000",
+    "Verified mountain homestays, wholesome meals & guided transfers included",
     "The Ridge & Mall Road colonial heritage walk",
     "Kufri highland viewpoints & pine walks",
     "Jakhu Temple summit panorama",
@@ -663,8 +663,8 @@ export const SHIMLA_TRIP: Trip = {
       answer: "Yes, this itinerary is optimized specifically for weekend getaways with zero workday disruption.",
     },
     {
-      question: "Are these prices and dates finalized?",
-      answer: "This is indicative data reflecting our budget range of ₹7,000–₹8,000. Confirmed departure dates and slots are reserved directly via WhatsApp enquiry.",
+      question: "How do I book my trip and confirm slot availability?",
+      answer: "Click 'BOOK YOUR TRIP' on this page, choose your preferred batch and party size, and enter your details. We coordinate directly with you on WhatsApp to confirm slot availability, group details, and booking confirmation.",
     },
   ],
 };

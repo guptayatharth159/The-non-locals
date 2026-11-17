@@ -49,7 +49,7 @@ export default function AboutSection() {
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-2xl bg-white/5 border border-white/10">
                 <span className="w-2 h-2 rounded-full bg-[#D4F938]" />
-                <span>Accessible, transparent pricing (₹7K - ₹8K)</span>
+                <span>Transparent inclusions &amp; verified stays</span>
               </div>
             </div>
 

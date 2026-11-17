@@ -78,7 +78,7 @@ export default function Footer() {
             <div className="space-y-1.5 font-mono text-xs text-white/70">
               <div className="flex items-center gap-2">
                 <Compass className="w-3.5 h-3.5 text-[#D4F938]" />
-                <span>Indicative Budget: ₹7,000 – ₹8,000</span>
+                <span>Small Cohort Himalayan Expeditions</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mountain className="w-3.5 h-3.5 text-[#D4F938]" />
@@ -154,7 +154,7 @@ export default function Footer() {
               </p>
             </div>
             <div className="font-mono text-[11px] text-white/40">
-              *All itineraries, dates, and prices shown are indicative guides until batch schedules are confirmed.
+              *All itineraries and departure schedules are coordinated with verified local partners.
             </div>
           </div>
         </div>

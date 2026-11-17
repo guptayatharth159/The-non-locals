@@ -105,27 +105,25 @@ export default function ExpeditionCard({
           </div>
         </div>
 
-        {/* Footer: Price & CTA */}
+        {/* Footer: Booking & CTA */}
         <div className="flex items-center justify-between pt-1">
           <div>
-            <span className="block font-mono text-[10px] text-[#EDE5D5]/50 uppercase tracking-wider">
-              ALL-INCLUSIVE GROUP FARE
+            <span className="block font-mono text-[10px] text-[#A3A879] uppercase tracking-wider font-semibold">
+              EXPEDITION RESERVATION
             </span>
             <div className="flex items-baseline gap-1">
-              <span className="font-display text-2xl sm:text-3xl text-[#F8F7F2]">
-                {currency === "INR" ? "₹" : "$"}
-                {price.toLocaleString()}
+              <span className="font-display text-xl sm:text-2xl text-[#F8F7F2]">
+                SLOTS OPEN
               </span>
-              <span className="font-mono text-xs text-[#EDE5D5]/60">/ EXPLORER</span>
             </div>
           </div>
 
           <Link
-            href={`/#expedition-${slug}`}
-            className="inline-flex items-center justify-center w-11 h-11 bg-[#151916] border border-[#EDE5D5]/25 text-[#EDE5D5] transition-all duration-300 group-hover:bg-[#FF7135] group-hover:text-[#151916] group-hover:border-[#FF7135] group-hover:scale-105"
-            aria-label={`View details for ${title}`}
+            href={`/trips/${slug}#book`}
+            className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#D4F938] text-black font-heading font-black text-xs uppercase tracking-wider rounded-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,249,56,0.5)]"
           >
-            <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <span>BOOK TRIP</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
         </div>
       </div>

@@ -102,7 +102,7 @@ export default function TripDetailsView({ trip }: TripDetailsViewProps) {
           </div>
 
           {/* Right Column: Sticky Booking Widget (Spans 4 columns) */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4" id="book">
             <TripBookingCard
               trip={trip}
               selectedSlot={selectedSlot}

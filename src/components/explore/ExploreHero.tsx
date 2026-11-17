@@ -54,7 +54,7 @@ export default function ExploreHero() {
           <div className="flex flex-wrap items-center gap-3 pt-2 text-xs font-mono text-white/80">
             <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 flex items-center gap-1.5 text-[#D4F938]">
               <Compass className="w-3.5 h-3.5" />
-              Indicative Budget: ₹7,000 – ₹8,000
+              Verified Mountain Homestays &amp; Treks
             </span>
             <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">
               Solo Explorers Welcome

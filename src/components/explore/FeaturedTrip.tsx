@@ -120,28 +120,27 @@ export default function FeaturedTrip() {
               </div>
             </div>
 
-            {/* Pricing & Action */}
+            {/* Booking & Action */}
             <div className="flex flex-wrap items-end justify-between gap-4 pt-1">
               <div>
                 <span className="block font-mono text-[10px] text-[#D4F938] uppercase tracking-widest font-semibold">
-                  INDICATIVE PACKAGE FARE
+                  EXPEDITION RESERVATIONS
                 </span>
                 <div className="flex items-baseline gap-2">
-                  <span className="font-heading font-extrabold text-3xl sm:text-4xl text-white">
-                    ₹{trip.price.toLocaleString()}
+                  <span className="font-heading font-extrabold text-2xl sm:text-3xl text-white uppercase">
+                    BATCH SLOTS OPEN
                   </span>
-                  <span className="font-mono text-xs text-white/70">/ PERSON</span>
                 </div>
-                <span className="block font-mono text-[10px] text-white/50 pt-0.5">
-                  *Indicative package fare. Batch departures coordinated via WhatsApp.
+                <span className="block font-mono text-[10px] text-white/60 pt-0.5">
+                  All inclusions &amp; custom cohort fares coordinated directly via WhatsApp.
                 </span>
               </div>
 
               <Link
-                href={`/trips/${trip.slug}`}
-                className="group inline-flex items-center gap-3 pl-6 pr-2.5 py-3 bg-[#D4F938] hover:bg-[#C5EC2E] text-black font-heading font-bold text-sm sm:text-base rounded-full transition-all duration-300 hover:shadow-[0_0_25px_rgba(212,249,56,0.6)] active:scale-[0.98]"
+                href={`/trips/${trip.slug}#book`}
+                className="group inline-flex items-center gap-3 pl-6 pr-2.5 py-3 bg-[#D4F938] hover:bg-[#C5EC2E] text-black font-heading font-black text-sm sm:text-base rounded-full transition-all duration-300 hover:shadow-[0_0_25px_rgba(212,249,56,0.6)] active:scale-[0.98]"
               >
-                <span>View Details</span>
+                <span>BOOK YOUR TRIP</span>
                 <span className="w-8 h-8 rounded-full bg-black text-[#D4F938] flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
                   <ArrowRight className="w-4 h-4" />
                 </span>

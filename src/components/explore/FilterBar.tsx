@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion";
 export interface FilterState {
   search: string;
   category: string;
-  budget: string;
   duration: string;
   month: string;
   fastFillingOnly: boolean;
@@ -28,13 +27,6 @@ const CATEGORIES: { label: string; value: string }[] = [
   { label: "Road Trips", value: "Road Trips" },
 ];
 
-const BUDGET_RANGES = [
-  { label: "All Budgets", value: "All" },
-  { label: "₹7,000 – ₹8,000 (Indicative Range)", value: "7000-8000" },
-  { label: "Under ₹7,500", value: "under-7500" },
-  { label: "₹7,500+", value: "above-7500" },
-];
-
 const DURATIONS = [
   { label: "All Durations", value: "All" },
   { label: "Weekend (2-3 Days)", value: "weekend" },
@@ -51,8 +43,8 @@ const DEPARTURE_DATES = [
 
 const SORT_OPTIONS = [
   { label: "Recommended", value: "recommended" },
-  { label: "Price: Low to High", value: "price-asc" },
-  { label: "Price: High to Low", value: "price-desc" },
+  { label: "Duration: Short to Long", value: "duration-asc" },
+  { label: "Duration: Long to Short", value: "duration-desc" },
   { label: "Newest Departures", value: "newest" },
 ];
 
@@ -68,7 +60,6 @@ export default function FilterBar({
   const activeCount =
     (filters.search ? 1 : 0) +
     (filters.category !== "All" ? 1 : 0) +
-    (filters.budget !== "All" ? 1 : 0) +
     (filters.duration !== "All" ? 1 : 0) +
     (filters.month !== "All" ? 1 : 0) +
     (filters.fastFillingOnly ? 1 : 0) +
@@ -120,23 +111,6 @@ export default function FilterBar({
               ))}
             </select>
 
-            {/* 3. Budget Range Filter */}
-            <select
-              value={filters.budget}
-              onChange={(e) => onFilterChange("budget", e.target.value)}
-              aria-label="Filter by Budget Range"
-              className={`px-3 py-2 rounded-full border text-xs font-medium cursor-pointer focus:outline-none focus:border-[#D4F938] transition-colors ${
-                filters.budget !== "All"
-                  ? "bg-[#183D32] border-[#D4F938] text-[#D4F938]"
-                  : "bg-white/5 border-white/10 text-white hover:bg-white/10"
-              }`}
-            >
-              {BUDGET_RANGES.map((b) => (
-                <option key={b.value} value={b.value} className="bg-[#151916] text-white">
-                  {b.label}
-                </option>
-              ))}
-            </select>
 
             {/* 4. Duration Filter */}
             <select
@@ -311,21 +285,6 @@ export default function FilterBar({
               </select>
             </div>
 
-            {/* Budget Select */}
-            <div className="space-y-1">
-              <label className="text-[11px] font-mono text-white/70 uppercase">Budget Range</label>
-              <select
-                value={filters.budget}
-                onChange={(e) => onFilterChange("budget", e.target.value)}
-                className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/15 text-white text-xs font-medium"
-              >
-                {BUDGET_RANGES.map((b) => (
-                  <option key={b.value} value={b.value} className="bg-[#151916] text-white">
-                    {b.label}
-                  </option>
-                ))}
-              </select>
-            </div>
 
             {/* Duration Select */}
             <div className="space-y-1">

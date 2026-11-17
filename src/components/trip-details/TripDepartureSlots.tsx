@@ -95,14 +95,18 @@ export default function TripDepartureSlots({
                     )}
                   </div>
 
-                  {/* Price */}
+                  {/* Selection Status Badge */}
                   <div className="text-right">
-                    <span className="block font-mono text-[10px] text-white/50 uppercase">
-                      PER EXPLORER
-                    </span>
-                    <span className="font-heading font-extrabold text-2xl text-white">
-                      ₹{slot.price.toLocaleString()}
-                    </span>
+                    {isSelected ? (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#D4F938] text-black font-heading font-bold text-xs uppercase tracking-wider shadow-[0_0_15px_rgba(212,249,56,0.4)]">
+                        <Check className="w-3.5 h-3.5" />
+                        SELECTED
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/10 group-hover:bg-white/20 text-white font-mono text-xs uppercase tracking-wider transition-colors">
+                        SELECT BATCH
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

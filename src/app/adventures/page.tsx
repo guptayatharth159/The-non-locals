@@ -79,7 +79,6 @@ export default function AdventuresPage() {
   const [filters, setFilters] = useState<FilterState>({
     search: "",
     category: "All",
-    budget: "All",
     duration: "All",
     month: "All",
     fastFillingOnly: false,
@@ -94,7 +93,6 @@ export default function AdventuresPage() {
     setFilters({
       search: "",
       category: "All",
-      budget: "All",
       duration: "All",
       month: "All",
       fastFillingOnly: false,
@@ -126,26 +124,21 @@ export default function AdventuresPage() {
         return false;
       }
 
-      // 3. Budget Range Filter
-      if (filters.budget === "7000-8000" && (trip.price < 7000 || trip.price > 8000)) return false;
-      if (filters.budget === "under-7500" && trip.price >= 7500) return false;
-      if (filters.budget === "above-7500" && trip.price < 7500) return false;
-
-      // 4. Duration Filter
+      // 3. Duration Filter
       if (filters.duration === "weekend" && trip.durationDays > 3) return false;
       if (filters.duration === "short" && (trip.durationDays < 4 || trip.durationDays > 5)) return false;
       if (filters.duration === "expedition" && trip.durationDays < 6) return false;
 
-      // 5. Month Filter
+      // 4. Month Filter
       if (filters.month !== "All" && trip.departureMonth !== filters.month) return false;
 
-      // 6. Fast Filling Only
+      // 5. Fast Filling Only
       if (filters.fastFillingOnly && trip.availableSeats > 6) return false;
 
       return true;
     }).sort((a, b) => {
-      if (filters.sortBy === "price-asc") return a.price - b.price;
-      if (filters.sortBy === "price-desc") return b.price - a.price;
+      if (filters.sortBy === "duration-asc") return a.durationDays - b.durationDays;
+      if (filters.sortBy === "duration-desc") return b.durationDays - a.durationDays;
       if (filters.sortBy === "newest") return b.durationDays - a.durationDays;
       return 0; // "recommended"
     });
@@ -282,7 +275,7 @@ export default function AdventuresPage() {
                   No Expeditions Found
                 </h3>
                 <p className="font-body text-sm text-white/70 leading-relaxed">
-                  We couldn't find any trips matching your exact filter criteria. Try adjusting your search query, budget range, or duration.
+                  We couldn't find any trips matching your exact filter criteria. Try adjusting your search query, category, or duration filter.
                 </p>
                 <div className="pt-2">
                   <button

@@ -21,7 +21,6 @@ export default function TripBookingCard({
   setTravellers,
   onBookClick,
 }: TripBookingCardProps) {
-  const totalPrice = selectedSlot.price * travellers;
   const maxTravellers = 6;
 
   const incrementTravellers = () => {
@@ -48,25 +47,24 @@ export default function TripBookingCard({
           transition={{ duration: 0.6 }}
           className="rounded-3xl bg-[#0c0f0d]/90 backdrop-blur-2xl border border-white/15 p-6 xl:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.8)] space-y-6"
         >
-          {/* Top Price Row */}
+          {/* Top Header Row */}
           <div className="flex items-start justify-between gap-4 pb-4 border-b border-white/10">
             <div>
               <span className="block font-mono text-[10px] text-[#D4F938] uppercase tracking-widest font-semibold">
-                INDICATIVE PACKAGE FARE
+                EXPEDITION RESERVATION
               </span>
               <div className="flex items-baseline gap-1.5 mt-1">
-                <span className="font-heading font-black text-3xl xl:text-4xl text-white">
-                  ₹{selectedSlot.price.toLocaleString()}
+                <span className="font-heading font-black text-2xl xl:text-3xl text-white uppercase tracking-tight">
+                  BOOK YOUR TRIP
                 </span>
-                <span className="font-mono text-xs text-white/60">/ person</span>
               </div>
-              <span className="block font-mono text-[10px] text-white/50 pt-1">
-                *Overall indicative budget range: ₹7,000–₹8,000
+              <span className="block font-mono text-[10px] text-white/60 pt-1">
+                Selected Batch: <strong className="text-white">{selectedSlot.date || "Schedule TBA"}</strong>
               </span>
             </div>
 
-            <span className="px-3 py-1 rounded-full bg-[#183D32] border border-[#D4F938]/40 text-[#D4F938] font-mono font-semibold text-[10px] uppercase">
-              CONFIRMED TRIP
+            <span className="px-3 py-1 rounded-full bg-[#183D32] border border-[#D4F938]/40 text-[#D4F938] font-mono font-semibold text-[10px] uppercase shrink-0">
+              OPEN BATCH
             </span>
           </div>
 
@@ -77,7 +75,7 @@ export default function TripBookingCard({
               <span>CURATED GROUP EXPEDITION</span>
             </div>
             <p className="text-[11px] text-white/60 font-body">
-              Join solo or register with your friend circle.
+              Join solo or register with your circle. Custom packages coordinated directly.
             </p>
           </div>
 
@@ -86,7 +84,7 @@ export default function TripBookingCard({
             <div className="flex items-center justify-between font-mono text-xs text-white/70 uppercase">
               <span className="flex items-center gap-1.5">
                 <Users className="w-3.5 h-3.5 text-[#D4F938]" />
-                EXPLORERS COUNT
+                PARTY SIZE
               </span>
               <span className="text-[11px] text-white/50">MAX {maxTravellers}</span>
             </div>
@@ -118,21 +116,22 @@ export default function TripBookingCard({
             </div>
           </div>
 
-          {/* Total Calculation */}
+          {/* Reservation Summary */}
           <div className="p-4 rounded-2xl bg-white/[0.04] border border-white/10 space-y-2 font-mono text-xs">
             <div className="flex justify-between text-white/60">
-              <span>{travellers} Explorer × ₹{selectedSlot.price.toLocaleString()}</span>
-              <span>₹{totalPrice.toLocaleString()}</span>
+              <span>Selected Batch:</span>
+              <span className="text-[#D4F938] font-semibold">{selectedSlot.date || "Confirmed"}</span>
             </div>
             <div className="flex justify-between text-white/60">
-              <span>Curated Experiences & Stay</span>
-              <span className="text-[#D4F938]">AS SPECIFIED</span>
+              <span>Joining Format:</span>
+              <span className="text-white font-medium">{travellers > 1 ? "Group Cohort" : "Solo Explorer"}</span>
             </div>
-            <div className="pt-2 border-t border-white/10 flex justify-between items-baseline">
-              <span className="font-heading font-bold text-sm text-white">ESTIMATED TOTAL:</span>
-              <span className="font-heading font-black text-2xl text-[#D4F938]">
-                ₹{totalPrice.toLocaleString()}
-              </span>
+            <div className="flex justify-between text-white/60">
+              <span>Inclusions:</span>
+              <span className="text-white font-medium">Stays, Meals &amp; Trek</span>
+            </div>
+            <div className="pt-2 border-t border-white/10 text-[11px] text-white/50 leading-relaxed">
+              Click below to enter traveller details and coordinate directly with our team.
             </div>
           </div>
 
@@ -145,7 +144,7 @@ export default function TripBookingCard({
             <span>
               {selectedSlot.status === "sold-out"
                 ? "SOLD OUT"
-                : "BOOK YOUR ADVENTURE"}
+                : "BOOK YOUR TRIP"}
             </span>
             <ArrowRight className="w-4 h-4" />
           </button>
@@ -169,16 +168,13 @@ export default function TripBookingCard({
       {/* ======================================================== */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-black/90 backdrop-blur-2xl border-t border-white/15 px-4 py-3 select-none">
         <div className="max-w-md mx-auto flex items-center justify-between gap-4">
-          <div>
-            <span className="block font-mono text-[10px] text-white/50 uppercase">
-              INDICATIVE FOR {travellers} {travellers === 1 ? "EXPLORER" : "EXPLORERS"}
+          <div className="space-y-0.5">
+            <span className="block font-mono text-[10px] text-white/50 uppercase truncate max-w-[170px]">
+              {selectedSlot.date || "BATCH SELECTED"}
             </span>
             <div className="flex items-baseline gap-1.5">
-              <span className="font-heading font-black text-2xl text-[#D4F938]">
-                ₹{totalPrice.toLocaleString()}
-              </span>
-              <span className="font-mono text-[10px] text-white/50">
-                (Indicative)
+              <span className="font-heading font-black text-lg sm:text-xl text-[#D4F938]">
+                {travellers} {travellers === 1 ? "Explorer" : "Explorers"}
               </span>
             </div>
           </div>
@@ -188,7 +184,7 @@ export default function TripBookingCard({
             disabled={selectedSlot.status === "sold-out"}
             className="px-6 py-3 rounded-full bg-[#D4F938] hover:bg-[#C5EC2E] text-black font-heading font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_0_15px_rgba(212,249,56,0.6)] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shrink-0"
           >
-            {selectedSlot.status === "sold-out" ? "SOLD OUT" : "BOOK YOUR ADVENTURE"}
+            {selectedSlot.status === "sold-out" ? "SOLD OUT" : "BOOK YOUR TRIP"}
           </button>
         </div>
       </div>

@@ -94,25 +94,22 @@ export default function TripCard({ trip, priority = false }: TripCardProps) {
           </div>
         </div>
 
-        {/* Price & CTA Button */}
-        <div className="flex items-center justify-between pt-1">
+        {/* Reservation Status & Action */}
+        <div className="flex items-center justify-between pt-1 gap-2">
           <div>
             <span className="block font-mono text-[10px] text-[#D4F938] uppercase tracking-wider font-semibold">
-              INDICATIVE FARE
+              RESERVATIONS OPEN
             </span>
-            <div className="flex items-baseline gap-1.5">
-              <span className="font-heading font-extrabold text-2xl text-white">
-                ₹{price.toLocaleString()}
-              </span>
-              <span className="font-mono text-xs text-white/60">/ person</span>
-            </div>
+            <span className="font-heading font-semibold text-xs sm:text-sm text-white/90 uppercase tracking-tight">
+              Small Group Cohorts
+            </span>
           </div>
 
           <Link
-            href={`/trips/${slug}`}
-            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-white/10 group-hover:bg-[#D4F938] border border-white/20 group-hover:border-[#D4F938] text-white group-hover:text-black font-heading font-bold text-xs uppercase tracking-wider transition-all duration-300"
+            href={`/trips/${slug}#book`}
+            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#D4F938] hover:bg-[#c3e827] text-black font-heading font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_0_15px_rgba(212,249,56,0.3)] hover:shadow-[0_0_20px_rgba(212,249,56,0.5)] shrink-0"
           >
-            <span>View Details</span>
+            <span>BOOK YOUR TRIP</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>

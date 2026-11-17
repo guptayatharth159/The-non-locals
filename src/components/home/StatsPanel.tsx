@@ -20,9 +20,9 @@ export default function StatsPanel() {
     },
     {
       icon: <Compass className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4F938]" strokeWidth={2.2} />,
-      value: "₹7K – ₹8K",
-      label: "Indicative adventure budget",
-      mobileLabel: "₹7K–₹8K",
+      value: "Verified Stays",
+      label: "Handpicked mountain homestays",
+      mobileLabel: "Verified Stays",
     },
   ];
 

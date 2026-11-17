@@ -18,7 +18,6 @@ export default function DestinationCard() {
       image: "/images/hero-misty-lake-canoe.jpg",
       category: "OFFBEAT",
       href: "/trips/jibhi-tirthan-escape",
-      budget: "₹7,499",
     },
     {
       title: "Dharamshala – McLeodganj",
@@ -27,7 +26,6 @@ export default function DestinationCard() {
       image: "/images/hero-twilight-camp.jpg",
       category: "CULTURE",
       href: "/trips/dharamshala-mcleodganj-retreat",
-      budget: "₹7,800",
     },
     {
       title: "Manali – Kullu",
@@ -36,7 +34,6 @@ export default function DestinationCard() {
       image: "/images/emerald-lake.jpg",
       category: "MOUNTAIN",
       href: "/trips/manali-kullu-adventure",
-      budget: "₹7,999",
     },
     {
       title: "Shimla – Kufri",
@@ -45,7 +42,6 @@ export default function DestinationCard() {
       image: "/images/hero-camp.jpg",
       category: "HIGHLANDS",
       href: "/trips/shimla-kufri-getaway",
-      budget: "₹7,200",
     },
   ];
 
@@ -96,10 +92,10 @@ export default function DestinationCard() {
             </div>
           </div>
 
-          {/* Indicative budget chip */}
+          {/* Cohort status chip */}
           <div className="absolute bottom-2.5 left-2.5 pointer-events-none">
-            <span className="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[10px] font-mono text-white/90">
-              Indicative: <strong className="text-[#D4F938]">{current.budget}</strong>
+            <span className="px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[10px] font-mono text-white/90 uppercase tracking-wide">
+              COHORT: <strong className="text-[#D4F938]">BOOKINGS OPEN</strong>
             </span>
           </div>
         </Link>
@@ -146,10 +142,10 @@ export default function DestinationCard() {
 
             {/* Destination Button */}
             <Link
-              href={current.href}
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#D4F938] hover:bg-[#C5EC2E] text-black font-heading font-bold text-[11px] uppercase tracking-wider transition-all duration-200 hover:shadow-[0_0_15px_rgba(212,249,56,0.5)] active:scale-95 cursor-pointer"
+              href={`${current.href}#book`}
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#D4F938] hover:bg-[#C5EC2E] text-black font-heading font-bold text-[11px] uppercase tracking-wider transition-all duration-200 hover:shadow-[0_0_15px_rgba(212,249,56,0.5)] active:scale-95 cursor-pointer"
             >
-              <span>View Trip</span>
+              <span>BOOK YOUR TRIP</span>
               <ArrowUpRight className="w-3 h-3" />
             </Link>
           </div>
