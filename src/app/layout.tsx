@@ -99,10 +99,8 @@ export default function RootLayout({
         suppressHydrationWarning
         className="min-h-screen bg-[#0b0e0c] text-[#F8F7F2] font-body selection:bg-[#D4F938] selection:text-[#0b0e0c]"
       >
-        <SmoothScroll>
-          {children}
-          <FloatingWhatsApp />
-        </SmoothScroll>
+        <SmoothScroll>{children}</SmoothScroll>
+        <FloatingWhatsApp />
       </body>
     </html>
   );

@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import { getPublicSettings } from "@/lib/firebase/services/settingsService";
 
 export default function FloatingWhatsApp() {
@@ -28,14 +27,14 @@ export default function FloatingWhatsApp() {
     }
     loadSettings();
 
-    // Show initial teaser tooltip after 3 seconds, then hide after 5 seconds
+    // Show initial teaser tooltip after 2.5 seconds, then hide after 5 seconds
     const timer = setTimeout(() => {
       setShowTooltip(true);
       const hideTimer = setTimeout(() => {
         setShowTooltip(false);
       }, 5000);
       return () => clearTimeout(hideTimer);
-    }, 3000);
+    }, 2500);
 
     return () => {
       isMounted = false;
@@ -44,7 +43,7 @@ export default function FloatingWhatsApp() {
   }, []);
 
   const prefilledMessage =
-    "Hi THE NON LOCALS! 🏔️ I have a question about your upcoming Himalayan group expeditions.";
+    "Hi THE NON LOCALS! 🏔️ I have an enquiry about your upcoming Himalayan group expeditions.";
   const destinationPhone = whatsappNumber.replace(/[^0-9]/g, "") || "917485888279";
   const whatsappUrl = `https://wa.me/${destinationPhone}?text=${encodeURIComponent(
     prefilledMessage
@@ -53,41 +52,33 @@ export default function FloatingWhatsApp() {
   return (
     <aside
       aria-label="WhatsApp quick chat"
-      className={`fixed right-4 sm:right-7 z-50 select-none flex items-center gap-3 transition-all duration-300 ${
+      className={`fixed right-4 sm:right-7 z-[9999] select-none flex items-center gap-3 transition-all duration-300 ${
         isTripPage ? "bottom-20 sm:bottom-7" : "bottom-5 sm:bottom-7"
       }`}
+      style={{ zIndex: 9999 }}
     >
       {/* Interactive Tooltip (shows on teaser or hover) */}
-      <AnimatePresence>
-        {(showTooltip || isHovered) && (
-          <motion.div
-            initial={{ opacity: 0, x: 10, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 8, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#0e1411]/95 border border-white/15 text-white shadow-2xl backdrop-blur-md pointer-events-none"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-            <div className="flex flex-col">
-              <span className="font-heading font-bold text-xs uppercase tracking-wider text-white">
-                Chat with us
-              </span>
-              <span className="font-mono text-[10px] text-white/60">
-                Usually replies in minutes
-              </span>
-            </div>
-            <div className="w-2 h-2 rotate-45 bg-[#0e1411] border-r border-t border-white/15 -mr-4 -ml-1 shrink-0" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div
+        className={`hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#0e1411]/95 border border-white/15 text-white shadow-2xl backdrop-blur-md pointer-events-none transition-all duration-300 ${
+          showTooltip || isHovered
+            ? "opacity-100 translate-x-0 scale-100"
+            : "opacity-0 translate-x-2 scale-95 pointer-events-none"
+        }`}
+      >
+        <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+        <div className="flex flex-col">
+          <span className="font-heading font-bold text-xs uppercase tracking-wider text-white">
+            Chat with us
+          </span>
+          <span className="font-mono text-[10px] text-white/60">
+            Usually replies in minutes
+          </span>
+        </div>
+        <div className="w-2 h-2 rotate-45 bg-[#0e1411] border-r border-t border-white/15 -mr-4 -ml-1 shrink-0" />
+      </div>
 
       {/* Floating Button with Ambient Glow & Red Notification Badge */}
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.6 }}
-        className="relative flex items-center justify-center"
-      >
+      <div className="relative flex items-center justify-center">
         {/* Soft Ambient Halo (matches user screenshot outer ring) */}
         <div
           className="absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#25D366]/25 pointer-events-none animate-pulse"
@@ -124,7 +115,7 @@ export default function FloatingWhatsApp() {
             1
           </span>
         </a>
-      </motion.div>
+      </div>
     </aside>
   );
 }
