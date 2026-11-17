@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { WHY_TRAVEL_WITH_US } from "@/lib/constants";
+import SocialLinks from "@/components/ui/SocialLinks";
 
 const ICON_MAP: Record<string, React.ReactNode> = {
   BadgePercent: <BadgePercent className="w-5 h-5 text-[#D4F938]" strokeWidth={2} />,
@@ -94,6 +95,9 @@ export default function WhyTravelWithUs() {
               <p className="font-body text-xs sm:text-sm text-white/80 max-w-2xl leading-relaxed">
                 You do not need a pre-existing group of friends to travel with us. Most travellers sign up solo, connect with friendly fellow explorers on day one, and form lasting friendships over shared mountain trails.
               </p>
+              <div className="pt-2">
+                <SocialLinks size="sm" />
+              </div>
             </div>
           </div>
 

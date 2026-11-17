@@ -3,8 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Compass, Shield, Mountain, Mail, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Compass, Shield, Mountain, MessageCircle } from "lucide-react";
 import { BRAND, NAV_ITEMS, CONFIRMED_DESTINATIONS } from "@/lib/constants";
+import SocialLinks from "@/components/ui/SocialLinks";
 
 export default function Footer() {
   return (
@@ -44,9 +45,12 @@ export default function Footer() {
                 <span>VIEW EXPEDITIONS</span>
               </Link>
             </div>
-            <span className="font-mono text-[11px] text-white/50 mt-2">
-              CURATED SMALL GROUP EXPEDITIONS // DIRECT COMMUNITY DISPATCHES
-            </span>
+            <div className="flex flex-wrap items-center justify-between gap-3 mt-3">
+              <span className="font-mono text-[11px] text-white/50">
+                CURATED SMALL GROUP EXPEDITIONS // DIRECT COMMUNITY DISPATCHES
+              </span>
+              <SocialLinks size="sm" />
+            </div>
           </div>
         </div>
 
@@ -80,10 +84,11 @@ export default function Footer() {
                 <Mountain className="w-3.5 h-3.5 text-[#D4F938]" />
                 <span>Western Himalayas, Himachal Pradesh</span>
               </div>
-              <div className="flex items-center gap-2 pt-1 text-[#D4F938]">
-                <Mail className="w-3.5 h-3.5" />
-                <span>{BRAND.contactEmail}</span>
-              </div>
+            </div>
+
+            {/* Official Icon-Only Social Media Links */}
+            <div className="pt-2">
+              <SocialLinks size="md" />
             </div>
           </div>
 

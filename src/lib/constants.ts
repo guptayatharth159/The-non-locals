@@ -10,10 +10,49 @@ export const BRAND = {
   establishedYear: "2024",
   baseCampCoordinates: "32.2396° N, 77.1887° E",
   baseCampLocation: "Western Himalayas, India",
-  contactEmail: "hello@thenonlocals.com",
-  instagramHandle: "@thenonlocals",
+  contactEmail: "nonlocalsofficial@gmail.com",
+  instagramHandle: "@thenonlocals.in",
   phone: "+91 7485 888 279",
 };
+
+export interface SocialLinkItem {
+  id: "instagram" | "facebook" | "whatsapp" | "gmail";
+  name: string;
+  url: string;
+  isExternal: boolean;
+  ariaLabel: string;
+}
+
+export const SOCIAL_LINKS: SocialLinkItem[] = [
+  {
+    id: "instagram",
+    name: "Instagram",
+    url: "https://www.instagram.com/thenonlocals.in",
+    isExternal: true,
+    ariaLabel: "Follow The Non Locals on Instagram",
+  },
+  {
+    id: "facebook",
+    name: "Facebook",
+    url: "https://www.facebook.com/share/1DV6BXgNhp/",
+    isExternal: true,
+    ariaLabel: "Connect with The Non Locals on Facebook",
+  },
+  {
+    id: "whatsapp",
+    name: "WhatsApp",
+    url: "https://chat.whatsapp.com/FOcTsqpJYXE8bgn5BV6yCv",
+    isExternal: true,
+    ariaLabel: "Join The Non Locals WhatsApp Community",
+  },
+  {
+    id: "gmail",
+    name: "Gmail",
+    url: "mailto:nonlocalsofficial@gmail.com",
+    isExternal: false,
+    ariaLabel: "Email The Non Locals via Gmail",
+  },
+];
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "DESTINATIONS", href: "/adventures" },

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Compass, Sparkles, MapPin, Landmark, Footprints, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { WHAT_TO_EXPECT } from "@/lib/constants";
+import SocialLinks from "@/components/ui/SocialLinks";
 
 const ICON_MAP = [
   <Footprints key="1" className="w-5 h-5 text-[#D4F938]" strokeWidth={2} />,
@@ -50,6 +51,11 @@ export default function AboutSection() {
                 <span className="w-2 h-2 rounded-full bg-[#D4F938]" />
                 <span>Accessible, transparent pricing (₹7K - ₹8K)</span>
               </div>
+            </div>
+
+            {/* Official Community Channels (Icon-Only) */}
+            <div className="pt-3 flex items-center">
+              <SocialLinks size="md" />
             </div>
           </div>
 
