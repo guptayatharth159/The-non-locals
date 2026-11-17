@@ -26,13 +26,20 @@ export default function FloatingWhatsApp() {
     };
   }, []);
 
-  // Approved official WhatsApp line for THE NON LOCALS
+  // Approved official WhatsApp line for THE NON LOCALS (+91 7485 888 279)
   const destinationPhone = "917485888279";
   const prefilledMessage =
     "Hi THE NON LOCALS! 🏔️ I have an enquiry about your upcoming Himalayan group expeditions.";
   const whatsappUrl = `https://wa.me/${destinationPhone}?text=${encodeURIComponent(
     prefilledMessage
   )}`;
+
+  const handleOpenWhatsApp = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (typeof window !== "undefined") {
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    }
+  };
 
   return (
     <aside
@@ -78,6 +85,7 @@ export default function FloatingWhatsApp() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleOpenWhatsApp}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           className="relative group w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(37,211,102,0.45)] hover:shadow-[0_12px_35px_rgba(37,211,102,0.65)] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
