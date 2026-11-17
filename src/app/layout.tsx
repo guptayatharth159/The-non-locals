@@ -41,8 +41,15 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: BRAND.name }],
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+      { url: "/images/logo.png", type: "image/png", sizes: "533x533" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
   },
   openGraph: {
     title: `${BRAND.name} | ${BRAND.tagline}`,
